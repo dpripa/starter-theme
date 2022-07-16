@@ -1,0 +1,32 @@
+$zindex-dropdown: 1000;
+
+$dropdown-min-width: 160px;
+$dropdown-padding-y: 1rem;
+$dropdown-spacer: 15px;
+$dropdown-font-size: $font-size;
+$dropdown-color: $black;
+$dropdown-bg: $white;
+$dropdown-border-color: $border-color;
+$dropdown-border-radius: $border-radius;
+$dropdown-border-width: $border-width;
+$dropdown-inner-border-radius: calc(#{$dropdown-border-radius} - #{$dropdown-border-width});
+$dropdown-divider-bg: $gray;
+$dropdown-divider-margin-y: 1rem;
+$dropdown-box-shadow: $box-shadow;
+
+$dropdown-link-color: $black;
+$dropdown-link-hover-color: $black;
+$dropdown-link-hover-bg: $gray;
+
+$dropdown-link-active-color: $black;
+$dropdown-link-active-bg: $gray;
+
+$dropdown-link-disabled-color: $gray;
+
+$dropdown-item-padding-y: 0.25rem;
+$dropdown-item-padding-x: 1.5rem;
+
+$dropdown-header-color: $black;
+$dropdown-header-padding: $dropdown-padding-y $dropdown-item-padding-x;
+
+@import "~bootstrap/scss/dropdown";

@@ -1,0 +1,15 @@
+{
+  "main": [
+    "./scripts/main.js",
+    "./styles/main.scss"
+  ],
+  "singular": [
+    "./styles/singular.scss"
+  ],
+  "template-sample": [
+    "./styles/templates/template-sample.scss"
+  ],
+  "setting": [
+    "./styles/setting.scss"
+  ]
+}

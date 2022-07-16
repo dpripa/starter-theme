@@ -1,0 +1,12 @@
+.wp-block-pullquote {
+	display: table;
+	padding: 0;
+	text-align: left;
+
+	> blockquote {
+
+		> p {
+			font-size: 1.75rem;
+		}
+	}
+}

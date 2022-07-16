@@ -1,0 +1,208 @@
+@-ms-viewport {
+	width: device-width;
+}
+
+html {
+	box-sizing: border-box;
+	-ms-overflow-style: scrollbar;
+	font-size: $font-size;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: $font-weight-normal;
+	line-height: $line-height;
+	font-family: $font-family;
+	color: $black;
+	letter-spacing: $letter-spacing;
+	background: $white;
+	background-size: 100%;
+
+	::selection {
+		color: $white;
+		text-shadow: none;
+		background: $primary;
+	}
+}
+
+caption,
+th {
+	text-align: left;
+}
+
+a {
+	color: $primary;
+	outline: 0;
+	text-decoration-skip-ink: auto;
+	transition: all $transition-duration ease;
+
+	> * {
+		vertical-align: middle;
+	}
+
+	&:hover,
+	&:focus {
+		color: $primary-hover;
+	}
+
+	&:active {
+		color: $primary-active;
+	}
+}
+
+input,
+select,
+button {
+	outline: 0;
+}
+
+button {
+	line-height: $line-height;
+}
+
+input[type="date"],
+select {
+	cursor: pointer;
+}
+
+input[type="submit"],
+button {
+
+	&:not([disabled]) {
+		cursor: pointer;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: $title-font-weight;
+	line-height: $title-line-height;
+	font-family: $title-font-family;
+	letter-spacing: $title-letter-spacing;
+}
+
+h1 {
+	font-size: 2.25rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
+
+.alignnone {
+	max-width: 100%;
+	height: auto;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.aligncenter {
+	display: block;
+	height: auto;
+	margin: 0 auto;
+}
+
+.alignleft,
+.alignright {
+	height: auto;
+}
+
+@media (min-width: $screen-lg-min) {
+
+	.alignleft {
+		float: left;
+		margin-right: 2rem;
+	}
+
+	.alignright {
+		float: right;
+		margin-left: 2rem;
+	}
+}
+
+.screen-reader-response,
+.screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	color: #000;
+	background: #fff;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+}
+
+.overflow-hidden {
+	overflow: hidden !important;
+}
+
+.ul-clean {
+	margin: 0;
+	padding: 0;
+
+	> li {
+		list-style: none;
+	}
+}
+
+.ul-inline,
+.ul-inline-block {
+	font-size: 0;
+	line-height: 0;
+
+	> li {
+		line-height: $line-height;
+		vertical-align: middle;
+
+		> * {
+			vertical-align: middle;
+		}
+	}
+}
+
+.ul-inline {
+
+	> li {
+		display: inline;
+	}
+}
+
+.ul-inline-block {
+
+	> li {
+		display: inline-block;
+	}
+}

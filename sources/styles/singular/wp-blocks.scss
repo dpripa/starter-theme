@@ -1,0 +1,21 @@
+@import "wp-blocks/block-audio";
+@import "wp-blocks/block-buttons";
+@import "wp-blocks/block-code";
+@import "wp-blocks/block-cover";
+@import "wp-blocks/block-file";
+@import "wp-blocks/block-gallery";
+@import "wp-blocks/block-image";
+@import "wp-blocks/block-media-text";
+@import "wp-blocks/block-preformatted";
+@import "wp-blocks/block-pullquote";
+@import "wp-blocks/block-table";
+@import "wp-blocks/block-verse";
+
+.has-white-color {
+	color: $white;
+}
+
+.has-black-color {
+	color: $black;
+}
+

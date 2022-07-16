@@ -1,0 +1,15 @@
+.wp-block-cover {
+	padding: 2.5rem;
+	overflow: hidden;
+	border-radius: $border-radius;
+
+	a {
+		color: $white;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $primary;
+		}
+	}
+}

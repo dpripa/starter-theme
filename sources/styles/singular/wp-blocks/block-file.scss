@@ -1,0 +1,15 @@
+.wp-block-file {
+
+	> * {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	> a:not(.wp-block-file__button) {
+		font-size: 0.875rem;
+	}
+
+	.wp-block-file__button {
+		margin-left: 2rem;
+	}
+}

@@ -1,0 +1,85 @@
+.wp-block-table {
+	margin: 0;
+
+	> table {
+		border-spacing: 0;
+
+		> tbody {
+
+			> tr {
+
+				> td {
+					padding: 1rem 1.5rem;
+				}
+			}
+		}
+	}
+
+	> figcaption {
+		display: block;
+		margin: 2rem 0 0;
+		font-size: 1rem;
+		color: $gray;
+	}
+
+	&:not(.is-style-stripes) {
+
+		> table {
+			border: $border-width solid $border-light;
+			border-radius: $border-radius;
+
+			> tbody {
+
+				> tr {
+
+					> td {
+						border-right: 1px solid $border-light;
+						border-bottom: 1px solid $border-light;
+
+						&:last-child {
+							border-right: 0;
+						}
+					}
+
+					&:last-child {
+
+						> td {
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.is-style-stripes {
+		border: 0;
+
+		> table {
+
+			> tbody {
+
+				> tr {
+
+					&:nth-child(odd) {
+						background: $gray-light;
+						border: 0;
+
+						> td {
+
+							&:first-child {
+								border-top-left-radius: $border-radius;
+								border-bottom-left-radius: $border-radius;
+							}
+
+							&:last-child {
+								border-top-right-radius: $border-radius;
+								border-bottom-right-radius: $border-radius;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

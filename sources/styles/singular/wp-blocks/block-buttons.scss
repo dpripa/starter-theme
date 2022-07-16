@@ -1,0 +1,25 @@
+.wp-block-buttons {
+	margin-bottom: 1.5rem !important;
+
+	.wp-block-button {
+		margin: 0 1.5rem 1.5rem 0;
+
+		&.is-style-outline {
+
+			.wp-block-button__link {
+				color: $black;
+				border-width: $border-width;
+
+				&:hover,
+				&:focus {
+					color: $primary;
+				}
+
+				&:active {
+					color: $primary-hover;
+				}
+			}
+
+		}
+	}
+}
