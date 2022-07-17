@@ -33,8 +33,10 @@
     "wp-coding-standards/wpcs": "^2.2.1"
   },
   "scripts": {
-    "no-dev": "composer install --no-dev",
-    "optimize": "composer dump-autoload --optimize",
-    "wpcs": "phpcs"
+    "webpack-start": "cd sources && npm run start",
+    "webpack-build": "cd sources && npm run build",
+    "install-no-dev": "composer install --no-dev",
+    "optimize-autoloader": "composer dump-autoload --optimize",
+    "lint-php": "phpcs"
   }
 }

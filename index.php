@@ -8,7 +8,7 @@ get_header();
 
 $page_title = Singular::get_title();
 ?>
-<main class="my-layout" role="main" itemscope itemprop="mainContentOfPage">
+<main class="my-theme-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
 		if ( have_posts() ) {

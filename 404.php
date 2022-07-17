@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>
-<main class="my-layout" role="main" itemscope itemprop="mainContentOfPage">
+<main class="my-theme-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php app()->template()->render( 'breadcrumbs' ); ?>
 		<h1><?php echo esc_html( Singular::get_title() ); ?></h1>

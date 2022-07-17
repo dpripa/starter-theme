@@ -8,13 +8,13 @@ if ( post_password_required() ) {
 	return;
 }
 
-$comment_count = get_comments_number();
+$comment_count = (int) get_comments_number();
 ?>
-<section>
+<section class="my-theme-comments">
 	<?php if ( have_comments() ) { ?>
 		<h2>
 			<?php
-			if ( '1' === $comment_count ) {
+			if ( 1 === $comment_count ) {
 				printf(
 					esc_html( app()->i18n()->__( 'One thought on \'%1$s\'' ) ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'

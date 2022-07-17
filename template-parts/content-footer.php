@@ -4,7 +4,7 @@ namespace My_Theme;
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<footer class="my-footer">
+<footer class="my-theme-footer">
 	<div class="container">
 		<div>
 			<?php echo esc_html( '© ' . gmdate( 'Y' ) ); ?>
