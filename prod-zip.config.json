@@ -1,6 +1,8 @@
 {
   "name": "my-theme",
   "dirs": [
+    "acf-blocks",
+    "acf-json",
     "assets",
     "includes",
     "languages",
