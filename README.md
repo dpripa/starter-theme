@@ -28,6 +28,7 @@ Boilerplate for developing a WordPress theme (hereinafter referred to as the app
 ```
 - Search for `My_Theme` in the application's root directory to capture default PHP namespace and replace it with your own.
 - Search for `my-theme` to replace the default CSS class prefixes and production zip name.
+- Rename the `languages/my_theme.pot` file with the Wpappy application key (also by default this is the PHP namespace of your application in the lower case) which is used as the localization text domain.
 - Also don't forget to edit the fields in the `composer.json`, `sources/package.json` and `tools/package.json` files, and edit the header information in the `style.css` file.
 - Then run following command in the application root directory to install Composer and Node.js dependencies:
 ```bash
