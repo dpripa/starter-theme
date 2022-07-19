@@ -27,14 +27,16 @@ defined( 'ABSPATH' ) || exit;
 			<?php } ?>
 		</span>
 		</a>
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location' => app()->get_key( 'main' ),
-				'menu_class'     => 'ul-clean ul-inline-block',
-				'container'      => 'ul',
-			)
-		)
-		?>
+		<nav class="my-theme-header__menu">
+			<?php
+			app()->nav_menu()->render(
+				'main',
+				array(
+					'menu_class' => 'ul-clean ul-inline-block',
+					'container'  => 'ul',
+				)
+			);
+			?>
+		</nav>
 	</div>
 </header>

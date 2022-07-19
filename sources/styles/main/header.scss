@@ -1,3 +1,20 @@
 .my-theme-header {
 	padding: 30px 0;
 }
+
+.my-theme-header__menu {
+
+	> ul {
+
+		> li {
+
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+
+			> a {
+				font-size: 18px;
+			}
+		}
+	}
+}
