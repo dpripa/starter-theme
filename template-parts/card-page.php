@@ -4,7 +4,7 @@ namespace My_Theme;
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class(); ?> id="page-<?php the_ID(); ?>">
 	<?php if ( has_post_thumbnail() ) { ?>
 		<a class="my-theme-img" href="<?php echo esc_url( get_permalink() ); ?>">
 			<img

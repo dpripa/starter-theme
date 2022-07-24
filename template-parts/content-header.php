@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 			$description = get_bloginfo( 'description', 'display' );
 
-			if ( $description || is_customize_preview() ) {
+			if ( $description ) {
 				?>
 				<span class="my-theme-logo__description">
 					<?php echo $description; // phpcs:ignore ?>
