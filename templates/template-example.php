@@ -1,6 +1,12 @@
 <?php
+/**
+ * Template Name:      Example
+ * Template Post Type: post, page
+ */
 
 namespace MyTheme;
+
+__('Sample', KEY);
 
 defined('ABSPATH') || exit;
 

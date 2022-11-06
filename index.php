@@ -1,8 +1,8 @@
 <?php
 
-namespace My_Theme;
+namespace MyTheme;
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
 
@@ -11,22 +11,22 @@ $page_title = Singular::get_title();
 <main class="my-theme-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
-		if ( have_posts() ) {
-			if ( $page_title ) {
+		if (have_posts()) {
+			if ($page_title) {
 				?>
-				<h1><?php echo esc_html( $page_title ); ?></h1>
+				<h1><?php echo esc_html($page_title); ?></h1>
 				<?php
 			}
 
-			while ( have_posts() ) {
+			while (have_posts()) {
 				the_post();
-				app()->template()->render( 'card-' . get_post_type() );
+				Template::render('card-' . get_post_type());
 			}
 
-			app()->template()->render( 'pagination' );
+			Template::render('pagination');
 
 		} else {
-			app()->template()->render( 'content-none' );
+			Template::render('content-none');
 		}
 		?>
 	</div>

@@ -1,16 +1,36 @@
 <?php
+namespace MyTheme;
 
-namespace My_Theme;
+defined('ABSPATH') || exit;
 
-defined( 'ABSPATH' ) || exit;
+const KEY = 'my_theme';
 
-require_once __DIR__ . '/vendor/wpappy/wpappy/index.php';
-require_once __DIR__ . '/vendor/autoload.php';
+function get_url(string $rel = '', bool $stamp = false): string {
+	$url = get_theme_file_uri($rel);
 
-use Wpappy_1_0_6\App as App;
+	if ($stamp) {
+		$path = get_path($rel);
 
-function app(): App {
-	return App::get( __NAMESPACE__, __FILE__ );
+		if (!file_exists($path)) {
+			return $url;
+		}
+
+		return add_query_arg(['ver' => filemtime($path)], $url);
+	}
+
+	return $url;
 }
+
+function get_path(string $rel = ''): string {
+	return get_theme_file_path($rel);
+}
+
+$autoload = get_path('vendor/autoload.php');
+
+if (!file_exists($autoload)) {
+	throw new \Exception('Autoloader not exists');
+}
+
+require_once $autoload;
 
 new Setup();

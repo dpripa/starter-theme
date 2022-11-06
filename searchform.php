@@ -1,16 +1,16 @@
 <?php
 
-namespace My_Theme;
+namespace MyTheme;
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 ?>
-<form class="my-theme-search" role="search" method="get" action="<?php echo esc_url( app()->http()->get_home_url() ); ?>">
-	<label aria-label="<?php echo esc_attr( app()->i18n()->__( 'Search field' ) ); ?>">
+<form class="my-theme-search" role="search" method="get" action="<?php echo esc_url(Url::get_home()); ?>">
+	<label aria-label="<?php echo esc_attr__('Search field', KEY); ?>">
 		<input
 			value="<?php echo get_search_query(); ?>"
 			name="s"
 			type="search"
-			placeholder="<?php echo esc_attr( app()->i18n()->__( 'Search' ) ); ?>"
+			placeholder="<?php echo esc_attr__('Search', KEY); ?>"
 		>
 	</label>
 </form>

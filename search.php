@@ -1,29 +1,29 @@
 <?php
 
-namespace My_Theme;
+namespace MyTheme;
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
 ?>
 <main class="my-theme-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
-		app()->template()->render( 'breadcrumbs' );
+		Template::render('breadcrumbs');
 
-		if ( have_posts() ) {
+		if (have_posts()) {
 			?>
-			<h1><?php echo esc_html( Singular::get_title() ); ?></h1>
+			<h1><?php echo esc_html(Singular::get_title()); ?></h1>
 			<?php
-			while ( have_posts() ) {
+			while (have_posts()) {
 				the_post();
-				app()->template()->render( 'card-page' );
+				Template::render('card-page');
 			}
 
-			app()->template()->render( 'pagination' );
+			Template::render('pagination');
 
 		} else {
-			app()->template()->render( 'content-none' );
+			Template::render('content-none');
 		}
 		?>
 	</div>
