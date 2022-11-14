@@ -2,11 +2,9 @@
 
 namespace MyTheme\Data_Type;
 
-use MyTheme\StaticClass;
-
 defined('ABSPATH') || exit;
 
-final class Str extends StaticClass {
+final class Str {
 	public static function to_camelcase(string $text, string $separator = '_'): string {
 		return array_reduce(
 			explode($separator, $text),

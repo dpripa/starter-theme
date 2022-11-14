@@ -4,7 +4,7 @@ namespace MyTheme;
 
 defined('ABSPATH') || exit;
 
-final class Url extends StaticClass {
+final class Url {
 	public static function get_current(): string {
 		$path = add_query_arg(null, null);
 

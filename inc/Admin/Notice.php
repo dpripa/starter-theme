@@ -2,12 +2,14 @@
 
 namespace MyTheme\Admin;
 
-use MyTheme\StaticClass;
+use MyTheme\Simpleton;
 use const MyTheme\KEY;
 
 defined('ABSPATH') || exit;
 
-final class Notice extends StaticClass {
+final class Notice {
+	use Simpleton;
+
 	private const KEY = KEY . '_admin_transient_notices';
 
 	public function __construct() {

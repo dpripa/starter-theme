@@ -2,13 +2,14 @@
 
 namespace MyTheme\ACF;
 
-use MyTheme\StaticClass;
+use MyTheme\Simpleton;
 use const MyTheme\KEY;
 use function MyTheme\get_path;
 
 defined('ABSPATH') || exit;
 
-final class Block extends StaticClass {
+final class Block {
+	use Simpleton;
 
 	public function __construct() {
 		if ($this->is_initialized()) {

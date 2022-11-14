@@ -4,7 +4,7 @@ namespace MyTheme;
 
 defined('ABSPATH') || exit;
 
-abstract class StaticClass {
+trait Simpleton {
 	protected static $is_initialized = false;
 
 	protected function is_initialized(): bool {

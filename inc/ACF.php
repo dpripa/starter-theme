@@ -4,7 +4,9 @@ namespace MyTheme;
 
 defined('ABSPATH') || exit;
 
-final class ACF extends StaticClass {
+final class ACF {
+	use Simpleton;
+
 	public function __construct() {
 		if ($this->is_initialized()) {
 			return;

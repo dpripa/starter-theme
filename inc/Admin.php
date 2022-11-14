@@ -4,7 +4,9 @@ namespace MyTheme;
 
 defined('ABSPATH') || exit;
 
-final class Admin extends StaticClass {
+final class Admin {
+	use Simpleton;
+
 	public function __construct() {
 		if ($this->is_initialized()) {
 			return;

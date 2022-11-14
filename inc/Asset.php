@@ -4,13 +4,16 @@ namespace MyTheme;
 
 defined('ABSPATH') || exit;
 
-final class Asset extends StaticClass {
+final class Asset {
+	private const ASSET_DIR = 'asset';
+	private const SCRIPT_DIR = 'script';
+	private const STYLE_DIR = 'style';
 	private const POSTFIX = '.min';
 
 	public static function enqueue_script(string $name, array $deps = [], array $args = [], ?string $args_object_name = null, bool $in_footer = true): void {
 		$key = KEY . "_$name";
 		$filename = $name . self::POSTFIX . '.js';
-		$rel = "asset/script/$filename";
+		$rel = self::ASSET_DIR . '/' . self::SCRIPT_DIR . '/' . $filename;
 		$url = get_url($rel);
 		$path = get_path($rel);
 
@@ -34,7 +37,7 @@ final class Asset extends StaticClass {
 	public static function enqueue_style(string $name, array $deps = [], /* string|array */ $addition = null): void {
 		$key = KEY . "_$name";
 		$filename = $name . self::POSTFIX . '.css';
-		$rel = "asset/style/$filename";
+		$rel = self::ASSET_DIR . '/' . self::STYLE_DIR . '/' . $filename;
 		$url = get_url($rel);
 		$path = get_path($rel);
 

@@ -2,11 +2,9 @@
 
 namespace MyTheme\Data_Type;
 
-use MyTheme\StaticClass;
-
 defined('ABSPATH') || exit;
 
-final class Arr extends StaticClass {
+final class Arr {
 	public static function map_associative(callable $callback, array $array): array {
 		$result = [];
 

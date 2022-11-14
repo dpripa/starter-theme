@@ -2,13 +2,15 @@
 
 namespace MyTheme\Form;
 
-use MyPlugin\StaticClass;
+use MyTheme\Simpleton;
 use MyTheme\Url;
 use const MyTheme\KEY;
 
 defined('ABSPATH') || exit;
 
-abstract class Post extends StaticClass {
+abstract class Post {
+	use Simpleton;
+
 	protected const TYPE = 'admin_post';
 	protected const URL = 'admin-post';
 
