@@ -11,5 +11,7 @@ final class Form {
 		if ($this->is_initialized()) {
 			return;
 		}
+
+		new Form\Example();
 	}
 }

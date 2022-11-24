@@ -34,6 +34,7 @@ defined('ABSPATH') || exit;
 					'theme_location' => KEY . '_main',
 					'menu_class' => 'ul-clean ul-inline-block',
 					'container'  => 'ul',
+					'walker' => new Walker\MainMenu(),
 				]
 			);
 			?>
