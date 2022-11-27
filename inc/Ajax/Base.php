@@ -1,10 +1,10 @@
 <?php
 
-namespace MyTheme\Form;
+namespace MyTheme\Ajax;
 
 defined('ABSPATH') || exit;
 
-abstract class Ajax extends Post {
+abstract class Base extends \MyTheme\Form\Base {
 	protected const TYPE = 'wp_ajax';
 	protected const URL = 'admin-ajax';
 }

@@ -8,7 +8,7 @@ use const MyTheme\KEY;
 
 defined('ABSPATH') || exit;
 
-abstract class Post {
+abstract class Base {
 	use Simpleton;
 
 	protected const TYPE = 'admin_post';

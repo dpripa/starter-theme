@@ -1,11 +1,11 @@
 <?php
 
-namespace MyTheme\Form;
+namespace MyTheme\Ajax;
 
 use const MyTheme\KEY;
 
 final class Example extends Base {
-	public const KEY = KEY . '_form_example';
+	public const KEY = KEY . '_ajax_example';
 
 	public function __construct() {
 		if ($this->is_initialized()) {

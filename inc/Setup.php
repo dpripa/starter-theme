@@ -18,6 +18,7 @@ final class Setup {
 	public function init(): void {
 		load_theme_textdomain(KEY, get_path('lang'));
 
+		new Ajax();
 		new Form();
 		new ACF();
 		new Admin();
