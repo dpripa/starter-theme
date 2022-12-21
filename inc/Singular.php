@@ -5,10 +5,8 @@ namespace MyTheme;
 defined('ABSPATH') || exit;
 
 final class Singular {
-	use Simpleton;
-
 	public function __construct() {
-		if ($this->is_initialized() || !is_singular()) {
+		if (!is_singular()) {
 			return;
 		}
 

@@ -2,20 +2,13 @@
 
 namespace MyTheme\ACF;
 
-use MyTheme\Simpleton;
 use const MyTheme\KEY;
 use function MyTheme\get_path;
 
 defined('ABSPATH') || exit;
 
 final class Block {
-	use Simpleton;
-
 	public function __construct() {
-		if ($this->is_initialized()) {
-			return;
-		}
-
 		$this->add('main', 'acf-block', __('Main', KEY));
 	}
 

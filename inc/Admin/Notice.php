@@ -2,21 +2,14 @@
 
 namespace MyTheme\Admin;
 
-use MyTheme\Simpleton;
 use const MyTheme\KEY;
 
 defined('ABSPATH') || exit;
 
 final class Notice {
-	use Simpleton;
-
 	private const KEY = KEY . '_admin_transient_notices';
 
 	public function __construct() {
-		if ($this->is_initialized()) {
-			return;
-		}
-
 		add_action('admin_init', [$this, 'render_transients']);
 	}
 

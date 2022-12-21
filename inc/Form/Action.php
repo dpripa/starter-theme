@@ -2,15 +2,12 @@
 
 namespace MyTheme\Form;
 
-use MyTheme\Simpleton;
 use MyTheme\Url;
 use const MyTheme\KEY;
 
 defined('ABSPATH') || exit;
 
-abstract class Base {
-	use Simpleton;
-
+abstract class Action {
 	protected const TYPE = 'admin_post';
 	protected const URL = 'admin-post';
 

@@ -5,20 +5,13 @@ namespace MyTheme;
 defined('ABSPATH') || exit;
 
 final class Setup {
-	use Simpleton;
-
 	public function __construct() {
-		if ($this->is_initialized()) {
-			return;
-		}
-
 		add_action('after_setup_theme', [$this, 'init']);
 	}
 
 	public function init(): void {
 		load_theme_textdomain(KEY, get_path('lang'));
 
-		new Ajax();
 		new Form();
 		new ACF();
 		new Admin();
