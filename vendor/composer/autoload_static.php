@@ -23,18 +23,10 @@ class ComposerStaticInit09d4e5753a8ecd3f41244b0ad6c778ba
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'MyTheme\\ACF' => __DIR__ . '/../..' . '/inc/ACF.php',
-        'MyTheme\\ACF\\Block' => __DIR__ . '/../..' . '/inc/ACF/Block.php',
-        'MyTheme\\Admin' => __DIR__ . '/../..' . '/inc/Admin.php',
-        'MyTheme\\Admin\\Notice' => __DIR__ . '/../..' . '/inc/Admin/Notice.php',
-        'MyTheme\\Asset' => __DIR__ . '/../..' . '/inc/Asset.php',
-        'MyTheme\\Form' => __DIR__ . '/../..' . '/inc/Form.php',
-        'MyTheme\\Form\\Ajax' => __DIR__ . '/../..' . '/inc/Form/Ajax.php',
-        'MyTheme\\Form\\Post' => __DIR__ . '/../..' . '/inc/Form/Post.php',
+        'MyTheme\\App' => __DIR__ . '/../..' . '/inc/App.php',
         'MyTheme\\Setup' => __DIR__ . '/../..' . '/inc/Setup.php',
-        'MyTheme\\Simpleton' => __DIR__ . '/../..' . '/inc/Simpleton.php',
         'MyTheme\\Singular' => __DIR__ . '/../..' . '/inc/Singular.php',
-        'MyTheme\\Template' => __DIR__ . '/../..' . '/inc/Template.php',
-        'MyTheme\\Url' => __DIR__ . '/../..' . '/inc/Url.php',
+        'MyTheme\\Walker\\MainMenu' => __DIR__ . '/../..' . '/inc/Walker/MainMenu.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

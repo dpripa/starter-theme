@@ -1,36 +1,50 @@
 <?php
+
 namespace MyTheme;
 
 defined('ABSPATH') || exit;
 
-const KEY = 'my_theme';
+$required_plugin_name = __('My Plugin');
 
-function get_url(string $rel = '', bool $stamp = false): string {
-	$url = get_theme_file_uri($rel);
+if (!class_exists('MyPlugin\App')) {
+	update_option('template', 'twentytwentyone');
+	update_option('stylesheet', 'twentytwentyone');
+	delete_option('current_theme');
 
-	if ($stamp) {
-		$path = get_path($rel);
+	if (is_admin()) {
+		add_action(
+			'admin_notices',
+			function () use ($required_plugin_name): void {
+				?>
+				<div class="notice notice-error is-dismissible" style="padding-top: 10px; padding-bottom: 10px;">
+					<b><?php echo esc_html__('Error'); ?>:</b>
+					<?php
+					echo sprintf(
+						esc_html__('the theme you are trying to activate needs <b>the "%s" plugin to be activated first</b>.'),
+						esc_html($required_plugin_name)
+					);
+					?>
+				</div>
+				<?php
+			}
+		);
 
-		if (!file_exists($path)) {
-			return $url;
-		}
-
-		return add_query_arg(['ver' => filemtime($path)], $url);
+		return;
 	}
 
-	return $url;
+	header('Location: ' . get_home_url('/'), true, 303);
 }
 
-function get_path(string $rel = ''): string {
-	return get_theme_file_path($rel);
-}
-
-$autoload = get_path('vendor/autoload.php');
+$autoload = __DIR__ . '/vendor/autoload.php';
 
 if (!file_exists($autoload)) {
 	throw new \Exception('Autoloader not exists');
 }
 
 require_once $autoload;
+
+function app(): App {
+	return App::get_instance(__NAMESPACE__, __FILE__);
+}
 
 new Setup();

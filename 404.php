@@ -8,9 +8,9 @@ get_header();
 ?>
 <main class="my-theme-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
-		<?php Template::render('breadcrumbs'); ?>
+		<?php app()->template->render('breadcrumbs'); ?>
 		<h1><?php echo esc_html(Singular::get_title()); ?></h1>
-		<p><?php echo esc_html__('It looks like nothing was found at this location.', KEY); ?></p>
+		<p><?php echo esc_html(app()->i18n->__('It looks like nothing was found at this location.')); ?></p>
 	</div>
 </main>
 <?php

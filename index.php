@@ -20,13 +20,13 @@ $page_title = Singular::get_title();
 
 			while (have_posts()) {
 				the_post();
-				Template::render('card-' . get_post_type());
+				app()->template->render('card-' . get_post_type());
 			}
 
-			Template::render('pagination');
+			app()->template->render('pagination');
 
 		} else {
-			Template::render('content-none');
+			app()->template->render('content-none');
 		}
 		?>
 	</div>

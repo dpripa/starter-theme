@@ -16,13 +16,13 @@ $comment_count = (int) get_comments_number();
 			<?php
 			if (1 === $comment_count) {
 				printf(
-					esc_html__('One thought on \'%1$s\'', KEY),
+					esc_html(app()->i18n->__('One thought on \'%1$s\'')),
 					'<span>' . wp_kses_post(get_the_title()) . '</span>'
 				);
 
 			} else {
 				printf(
-					esc_html(_n('%1$s thought on \'%2$s\'', '%1$s thoughts on \'%2$s\'', $comment_count, KEY)),
+					esc_html(app()->i18n->_n('%1$s thought on \'%2$s\'', '%1$s thoughts on \'%2$s\'', $comment_count)),
 					number_format_i18n($comment_count), // phpcs:ignore
 					'<span>' . wp_kses_post(get_the_title()) . '</span>'
 				);
@@ -46,7 +46,7 @@ $comment_count = (int) get_comments_number();
 
 		if (!comments_open()) {
 			?>
-			<p><?php echo esc_html__('Comments are closed.'); ?></p>
+			<p><?php echo esc_html(app()->i18n->__('Comments are closed.')); ?></p>
 			<?php
 		}
 	}

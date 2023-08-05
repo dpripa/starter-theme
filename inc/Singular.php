@@ -14,10 +14,10 @@ final class Singular {
 	}
 
 	public function enqueue_assets(): void {
-		Asset::enqueue_style('singular');
+		app()->asset->enqueue_style('singular');
 
 		if (self::is_template('template-example')) {
-			Asset::enqueue_style('template-example');
+			app()->asset->enqueue_style('template-example');
 		}
 	}
 
@@ -39,10 +39,10 @@ final class Singular {
 			return single_cat_title('', false);
 
 		} elseif (is_search()) {
-			return sprintf(esc_html__('Search Results for "%s"', KEY), get_search_query());
+			return sprintf(esc_html(app()->i18n->__('Search Results for "%s"')), get_search_query());
 
 		} elseif (is_404()) {
-			return esc_html__("Oops! That page can't be found.", KEY);
+			return esc_html(app()->i18n->__("Oops! That page can't be found."));
 		}
 
 		return get_the_title();

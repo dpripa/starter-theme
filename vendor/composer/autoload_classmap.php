@@ -8,16 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'MyTheme\\ACF' => $baseDir . '/inc/ACF.php',
-    'MyTheme\\ACF\\Block' => $baseDir . '/inc/ACF/Block.php',
-    'MyTheme\\Admin' => $baseDir . '/inc/Admin.php',
-    'MyTheme\\Admin\\Notice' => $baseDir . '/inc/Admin/Notice.php',
-    'MyTheme\\Asset' => $baseDir . '/inc/Asset.php',
-    'MyTheme\\Form' => $baseDir . '/inc/Form.php',
-    'MyTheme\\Form\\Ajax' => $baseDir . '/inc/Form/Ajax.php',
-    'MyTheme\\Form\\Post' => $baseDir . '/inc/Form/Post.php',
+    'MyTheme\\App' => $baseDir . '/inc/App.php',
     'MyTheme\\Setup' => $baseDir . '/inc/Setup.php',
-    'MyTheme\\Simpleton' => $baseDir . '/inc/Simpleton.php',
     'MyTheme\\Singular' => $baseDir . '/inc/Singular.php',
-    'MyTheme\\Template' => $baseDir . '/inc/Template.php',
-    'MyTheme\\Url' => $baseDir . '/inc/Url.php',
+    'MyTheme\\Walker\\MainMenu' => $baseDir . '/inc/Walker/MainMenu.php',
 );

@@ -18,4 +18,4 @@ defined('ABSPATH') || exit;
 <?php
 wp_body_open();
 
-Template::render('content-header');
+app()->template->render('content-header');

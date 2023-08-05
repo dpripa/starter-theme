@@ -1,39 +1,44 @@
 <?php
 
-namespace MyTheme\ACF;
+namespace MyTheme\Extension;
 
-use const MyTheme\KEY;
-use function MyTheme\get_path;
+use MyPlugin\Core\App;
+use MyPlugin\Core\Extension\FS;
+use MyPlugin\Core\Extension\I18n;
 
 defined('ABSPATH') || exit;
 
-final class Block {
-	public function __construct() {
-		$this->add('main', 'acf-block', __('Main', KEY));
+class ACFBlockAutoloader {
+	protected $app;
+	protected $fs;
+	protected $i18n;
+
+	public function __construct(App $app, FS $fs, I18n $i18n) {
+		$this->app = $app;
+		$this->fs = $fs;
+		$this->i18n = $i18n;
 	}
 
-	private function add(string $category, string $path, string $title): self {
+	public function add_block_type(string $category, string $path, string $title): void {
 		if (
 			!function_exists('acf_register_block_type') ||
 			!function_exists('register_block_type')
 		) {
-			return $this;
+			return;
 		}
 
-		$this->add_category($category, $title);
-		$this->add_template_autoloader($category, $path);
-
-		return $this;
+		$this->add_block_category($category, $title);
+		$this->add_block_template_autoloader($category, $path);
 	}
 
-	private function add_category(string $category, string $title): void {
+	protected function add_block_category(string $category, string $title): void {
 		add_filter(
 			'block_categories',
 			function (array $categories) use ($category, $title): array {
 				return array_merge(
 					[
 						[
-							'slug' => KEY . "_$category",
+							'slug' => $this->app->get_key($category),
 							'title' => $title,
 						],
 					],
@@ -43,11 +48,11 @@ final class Block {
 		);
 	}
 
-	private function add_template_autoloader(string $category, string $path): void {
+	protected function add_block_template_autoloader(string $category, string $path): void {
 		add_action(
 			'acf/init',
 			function() use ($category, $path): void {
-				$dir = get_path($path);
+				$dir = $this->fs->get_path($path);
 
 				if (!file_exists($dir)) {
 					return;
@@ -76,9 +81,9 @@ final class Block {
 					acf_register_block_type(
 						[
 							'name' => $slug,
-							'title' => esc_html__( $file_headers['name'], KEY ), // phpcs:ignore
-							'description' => esc_html__( $file_headers['description'], KEY ), // phpcs:ignore
-							'category' => KEY . "_$category",
+							'title' => $this->i18n->__($file_headers['name']),
+							'description' => $this->i18n->__($file_headers['description']),
+							'category' => $this->app->get_key($category),
 							'icon' => $file_headers['icon'],
 							'keywords' => explode(', ', $file_headers['keywords']),
 							'post_types' => explode(', ', trim($file_headers['post_types'])),
@@ -88,7 +93,7 @@ final class Block {
 								'align' => false,
 							],
 							'render_callback' => function (array &$args) use ($path, $slug) {
-								require_once get_path("${path}/${slug}.php");
+								require_once $this->fs->get_path("${path}/${slug}.php");
 							},
 						]
 					);

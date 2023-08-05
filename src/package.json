@@ -1,9 +1,9 @@
 {
-  "name": "src",
+  "name": "theme-src",
   "version": "1.0.0",
   "description": "",
   "homepage": "",
-  "license": "GPL-2.0-or-later",
+  "license": "",
   "private": true,
   "contributors": [
     {
