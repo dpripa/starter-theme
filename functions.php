@@ -4,35 +4,48 @@ namespace MyTheme;
 
 defined('ABSPATH') || exit;
 
-$required_plugin_name = __('My Plugin');
-
 if (!class_exists('MyPlugin\App')) {
-	update_option('template', 'twentytwentyone');
-	update_option('stylesheet', 'twentytwentyone');
-	delete_option('current_theme');
+	add_action(
+		'after_setup_theme',
+		function () {
+			update_option('template', 'twentytwentyone');
+			update_option('stylesheet', 'twentytwentyone');
+			delete_option('current_theme');
 
-	if (is_admin()) {
-		add_action(
-			'admin_notices',
-			function () use ($required_plugin_name): void {
-				?>
-				<div class="notice notice-error is-dismissible" style="padding-top: 10px; padding-bottom: 10px;">
-					<b><?php echo esc_html__('Error'); ?>:</b>
-					<?php
-					echo sprintf(
-						esc_html__('the theme you are trying to activate needs <b>the "%s" plugin to be activated first</b>.'),
-						esc_html($required_plugin_name)
-					);
-					?>
-				</div>
-				<?php
+			if (!is_admin()) {
+				header('Location: ' . get_home_url('/'), true, 303);
 			}
-		);
 
-		return;
-	}
+			$textdomain = strtolower(__NAMESPACE__);
+			load_theme_textdomain($textdomain, __DIR__ . '/lang');
 
-	header('Location: ' . get_home_url('/'), true, 303);
+			add_action(
+				'admin_notices',
+				function () use ($textdomain): void {
+					$plugin_name = 'My Plugin';
+					?>
+					<div class="notice notice-error is-dismissible" style="padding-top: 10px; padding-bottom: 10px;">
+						<?php
+						echo sprintf(
+							esc_html__('%1$s the %2$s theme %3$s the %4$s plugin to be %5$s first. %6$s', $textdomain),
+							'<b>' . esc_html__('Error', $textdomain) . ':</b>',
+							'<b>' . esc_html(get_file_data(__DIR__ . '/style.css', ['name' => 'Theme Name'])['name']) . '</b>',
+							'<b>' . esc_html__('needs', $textdomain) . '</b>',
+							'<b>' . esc_html($plugin_name) . '</b>',
+							'<b>' . esc_html__('activated', $textdomain) . '</b>',
+							'<b><a href="' . esc_html(get_admin_url(is_multisite() ? get_current_blog_id() : null, 'plugins.php')) . '">' .
+								esc_html__('Go to activation', $textdomain) .
+							'</a></b>'
+						);
+						?>
+					</div>
+					<?php
+				}
+			);
+		}
+	);
+
+	return;
 }
 
 $autoload = __DIR__ . '/vendor/autoload.php';

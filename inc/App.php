@@ -20,7 +20,7 @@ final class App implements Core\App {
 	public $template;
 
 	private function __construct(string $namespace, string $root_file) {
-		$this->init($namespace, $root_file);
+		$this->init($namespace, $root_file, true);
 
 		$this->arr = Core\Extension\Arr::get_instance();
 		$this->str = Core\Extension\Str::get_instance();
