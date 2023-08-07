@@ -38,7 +38,7 @@ final class App implements Core\App {
 		$this->hook = app()->hook;
 		$this->asset = new Core\Extension\Asset($this, $this->fs);
 		$this->i18n = new Core\Extension\I18n($this, $this->fs);
-		$this->info = new Core\Extension\Info($this);
+		$this->info = new Core\Extension\Info($this, $this->fs);
 		$this->acf_block_autoloader = new Extension\ACFBlockAutoloader($this, $this->fs, $this->i18n);
 		$this->template = new Core\Extension\Template($this, $this->fs);
 		$this->setting = app()->setting;
