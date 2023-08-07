@@ -11,6 +11,7 @@ final class Setup {
 
 	public function init(): void {
 		new ACF();
+		new Singular();
 
 		add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
 	}
