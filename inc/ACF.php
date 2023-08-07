@@ -12,7 +12,7 @@ final class ACF {
 			app()->i18n->__('Main')
 		);
 
-		if (defined('WP_ENVIRONMENT') && 'development' !== WP_ENVIRONMENT) {
+		if (!app()->env->is_development()) {
 			add_filter('acf/settings/show_admin', '__return_false');
 		}
 	}
