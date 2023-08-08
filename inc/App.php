@@ -25,7 +25,7 @@ final class App implements Core\App {
 	public $template;
 	public $setting;
 
-	private function __construct(string $namespace, string $root_file) {
+	public function __construct(string $namespace, string $root_file) {
 		$this->init($namespace, $root_file, true);
 
 		$this->arr = Core\Extension\Arr::get_instance();

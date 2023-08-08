@@ -6,6 +6,10 @@ defined('ABSPATH') || exit;
 
 final class ACF {
 	public function __construct() {
+		if (app()->validate_setup(self::class)) {
+			return;
+		}
+
 		app()->acf_block_autoloader->add_block_type(
 			'main',
 			'acf-block',

@@ -6,7 +6,7 @@ defined('ABSPATH') || exit;
 
 final class Singular {
 	public function __construct() {
-		if (!is_singular()) {
+		if (app()->validate_setup(self::class) || !is_singular()) {
 			return;
 		}
 
