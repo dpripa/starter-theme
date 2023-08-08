@@ -2,9 +2,9 @@
 
 namespace MyTheme;
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
-app()->template->render('content-footer');
+app()->template->render( 'content-footer' );
 
 wp_footer();
 ?>

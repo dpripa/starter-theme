@@ -2,4 +2,4 @@
 
 namespace MyTheme;
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;

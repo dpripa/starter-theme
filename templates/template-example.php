@@ -6,22 +6,22 @@
 
 namespace MyTheme;
 
-app()->__('Sample');
+app()->__( 'Sample' );
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>
 <main class="my-theme-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
-		app()->template->render('breadcrumbs');
+		app()->template->render( 'breadcrumbs' );
 
-		while (have_posts()) {
+		while ( have_posts() ) {
 			the_post();
-			app()->template->render('content-page');
+			app()->template->render( 'content-page' );
 
-			if (comments_open() || get_comments_number()) {
+			if ( comments_open() || get_comments_number() ) {
 				comments_template();
 			}
 		}

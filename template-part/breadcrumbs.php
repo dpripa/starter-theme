@@ -2,8 +2,8 @@
 
 namespace MyTheme;
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
-if (function_exists('YoastSEO')) {
-	yoast_breadcrumb('<div class="my-theme-breadcrumbs">', '</div>');
+if ( function_exists( 'YoastSEO' ) ) {
+	yoast_breadcrumb( '<div class="my-theme-breadcrumbs">', '</div>' );
 }

@@ -2,29 +2,29 @@
 
 namespace MyTheme;
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
-if (post_password_required()) {
+if ( post_password_required() ) {
 	return;
 }
 
 $comment_count = (int) get_comments_number();
 ?>
 <section class="my-theme-comments">
-	<?php if (have_comments()) { ?>
+	<?php if ( have_comments() ) { ?>
 		<h2>
 			<?php
-			if (1 === $comment_count) {
+			if ( 1 === $comment_count ) {
 				printf(
-					esc_html(app()->i18n->__('One thought on \'%1$s\'')),
-					'<span>' . wp_kses_post(get_the_title()) . '</span>'
+					esc_html( app()->i18n->__( 'One thought on \'%1$s\'' ) ),
+					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 
 			} else {
 				printf(
-					esc_html(app()->i18n->_n('%1$s thought on \'%2$s\'', '%1$s thoughts on \'%2$s\'', $comment_count)),
-					number_format_i18n($comment_count), // phpcs:ignore
-					'<span>' . wp_kses_post(get_the_title()) . '</span>'
+					esc_html( app()->i18n->_n( '%1$s thought on \'%2$s\'', '%1$s thoughts on \'%2$s\'', $comment_count ) ),
+					number_format_i18n( $comment_count ), // phpcs:ignore
+					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
 			?>
@@ -33,10 +33,10 @@ $comment_count = (int) get_comments_number();
 		<ol>
 			<?php
 			wp_list_comments(
-				[
-					'style' => 'ol',
+				array(
+					'style'      => 'ol',
 					'short_ping' => true,
-				]
+				)
 			);
 			?>
 		</ol>
@@ -44,9 +44,9 @@ $comment_count = (int) get_comments_number();
 		<?php
 		the_comments_navigation();
 
-		if (!comments_open()) {
+		if ( ! comments_open() ) {
 			?>
-			<p><?php echo esc_html(app()->i18n->__('Comments are closed.')); ?></p>
+			<p><?php echo esc_html( app()->i18n->__( 'Comments are closed.' ) ); ?></p>
 			<?php
 		}
 	}
