@@ -23,7 +23,6 @@ final class App implements Core\App {
 	public $info;
 	public $acf_block_autoloader;
 	public $template;
-	public $setting;
 
 	public function __construct( string $namespace, string $root_file ) {
 		$this->init( $namespace, $root_file, true );
@@ -41,6 +40,5 @@ final class App implements Core\App {
 		$this->info                 = new Core\Extension\Info( $this, $this->fs );
 		$this->acf_block_autoloader = new Extension\ACFBlockAutoloader( $this, $this->fs, $this->i18n );
 		$this->template             = new Core\Extension\Template( $this, $this->fs );
-		$this->setting              = app()->setting;
 	}
 }

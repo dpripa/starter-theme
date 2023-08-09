@@ -24,6 +24,7 @@ class ComposerStaticInit09d4e5753a8ecd3f41244b0ad6c778ba
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'MyTheme\\ACF' => __DIR__ . '/../..' . '/inc/ACF.php',
         'MyTheme\\App' => __DIR__ . '/../..' . '/inc/App.php',
+        'MyTheme\\Extension\\ACFBlockAutoloader' => __DIR__ . '/../..' . '/inc/Extension/ACFBlockAutoloader.php',
         'MyTheme\\Setup' => __DIR__ . '/../..' . '/inc/Setup.php',
         'MyTheme\\Singular' => __DIR__ . '/../..' . '/inc/Singular.php',
         'MyTheme\\Walker\\MainMenu' => __DIR__ . '/../..' . '/inc/Walker/MainMenu.php',

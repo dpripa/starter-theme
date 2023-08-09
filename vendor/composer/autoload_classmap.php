@@ -9,6 +9,7 @@ return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'MyTheme\\ACF' => $baseDir . '/inc/ACF.php',
     'MyTheme\\App' => $baseDir . '/inc/App.php',
+    'MyTheme\\Extension\\ACFBlockAutoloader' => $baseDir . '/inc/Extension/ACFBlockAutoloader.php',
     'MyTheme\\Setup' => $baseDir . '/inc/Setup.php',
     'MyTheme\\Singular' => $baseDir . '/inc/Singular.php',
     'MyTheme\\Walker\\MainMenu' => $baseDir . '/inc/Walker/MainMenu.php',
