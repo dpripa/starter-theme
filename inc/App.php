@@ -2,13 +2,15 @@
 
 namespace MyTheme;
 
-use MyPlugin\Core;
+use O0W7_1\Bootstrap;
+use O0W7_1\Extension;
+use MyTheme\Extension as CustomExtension;
 use function MyPlugin\app;
 
 defined( 'ABSPATH' ) || exit;
 
-final class App implements Core\App {
-	use Core\Bootstrap;
+final class App implements \O0W7_1\App {
+	use Bootstrap;
 
 	public $arr;
 	public $env;
@@ -25,20 +27,20 @@ final class App implements Core\App {
 	public $template;
 
 	public function __construct( string $namespace, string $root_file ) {
-		$this->init( $namespace, $root_file, true );
+		$this->init( $namespace, $root_file, 'theme' );
 
-		$this->arr                  = Core\Extension\Arr::get_instance();
-		$this->env                  = Core\Extension\Env::get_instance();
-		$this->str                  = Core\Extension\Str::get_instance();
-		$this->url                  = Core\Extension\Url::get_instance();
+		$this->arr                  = Extension\Arr::get_instance();
+		$this->env                  = Extension\Env::get_instance();
+		$this->str                  = Extension\Str::get_instance();
+		$this->url                  = Extension\Url::get_instance();
 		$this->admin_notice         = app()->admin_notice;
 		$this->form                 = app()->form;
-		$this->fs                   = new Core\Extension\FS( $this );
+		$this->fs                   = new Extension\FS( $this );
 		$this->hook                 = app()->hook;
-		$this->asset                = new Core\Extension\Asset( $this, $this->fs );
-		$this->i18n                 = new Core\Extension\I18n( $this, $this->fs );
-		$this->info                 = new Core\Extension\Info( $this, $this->fs );
-		$this->acf_block_autoloader = new Extension\ACFBlockAutoloader( $this, $this->fs, $this->i18n );
-		$this->template             = new Core\Extension\Template( $this, $this->fs );
+		$this->asset                = new Extension\Asset( $this, $this->fs );
+		$this->i18n                 = new Extension\I18n( $this, $this->fs );
+		$this->info                 = new Extension\Info( $this, $this->fs );
+		$this->acf_block_autoloader = new CustomExtension\ACFBlockAutoloader( $this, $this->fs, $this->i18n );
+		$this->template             = new Extension\Template( $this, $this->fs );
 	}
 }

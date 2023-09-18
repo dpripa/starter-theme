@@ -2,9 +2,9 @@
 
 namespace MyTheme\Extension;
 
-use MyPlugin\Core\App;
-use MyPlugin\Core\Extension\FS;
-use MyPlugin\Core\Extension\I18n;
+use O0W7_1\App;
+use O0W7_1\Extension\FS;
+use O0W7_1\Extension\I18n;
 
 defined( 'ABSPATH' ) || exit;
 

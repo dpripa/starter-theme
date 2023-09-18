@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "type": "wordpress-theme",
   "description": "WordPress Theme.",
-  "homepage": "https://wordpress.local",
+  "homepage": "https://wp.local",
   "license": "",
   "authors": [
     {
-      "name": "",
-      "email": "hello@wordpress.local",
-      "homepage": "https://wordpress.local"
+      "name": "developer",
+      "email": "developer@wp.local",
+      "homepage": "https://wp.local"
     }
   ],
   "keywords": [
