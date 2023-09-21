@@ -1,10 +1,10 @@
 <?php
 
-namespace MyTheme\Extension;
+namespace MyTheme\Feature;
 
 use O0W7_1\App;
-use O0W7_1\Extension\FS;
-use O0W7_1\Extension\I18n;
+use O0W7_1\Feature\FS;
+use O0W7_1\Feature\I18n;
 
 defined( 'ABSPATH' ) || exit;
 

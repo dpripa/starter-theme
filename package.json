@@ -1,27 +1,41 @@
 {
-  "name": "theme-src",
+  "name": "wp-theme",
   "version": "1.0.0",
   "description": "",
-  "homepage": "",
-  "license": "",
+  "homepage": "https://wp.local",
+  "license": "GPL-2.0-or-later",
   "private": true,
   "contributors": [
     {
-      "name": "",
-      "email": "",
-      "homepage": ""
+      "name": "developer",
+      "email": "developer@wp.local",
+      "homepage": "https://wp.local"
     }
   ],
   "keywords": [
     "wordpress"
   ],
-  "node": "14",
   "browserslist": [
     "last 2 versions",
     "android 4",
     "opera 12",
     "ie 11"
   ],
+  "entry": {
+    "main": [
+      "./script/main.js",
+      "./style/main.scss"
+    ],
+    "singular": [
+      "./style/singular.scss"
+    ],
+    "template-sample": [
+      "./style/templates/template-sample.scss"
+    ],
+    "setting": [
+      "./style/setting.scss"
+    ]
+  },
   "dependencies": {
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",

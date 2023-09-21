@@ -2,9 +2,9 @@
   "name": "wp/theme",
   "version": "1.0.0",
   "type": "wordpress-theme",
-  "description": "WordPress Theme.",
+  "description": "",
   "homepage": "https://wp.local",
-  "license": "",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "developer",
@@ -24,17 +24,24 @@
       "MyTheme\\": "inc/"
     }
   },
+  "repositories": [
+    {"type": "github", "url": "git@github.com:oowp/framework.git"},
+    {"type": "github", "url": "git@github.com:oowp/project-tools.git"}
+  ],
   "require": {
-    "php": "^7.2.0"
+    "php": "^7.2.0",
+    "oowp/framework": "1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.3.1",
-    "wp-coding-standards/wpcs": "^2.2.1"
+    "wp-coding-standards/wpcs": "^2.2.1",
+    "oowp/project-tools": "dev-main"
   },
   "scripts": {
-    "install-no-dev": "composer install --no-dev",
-    "optimize-autoloader": "composer dump-autoload --optimize",
-    "lint-php": "phpcs",
-    "format-php": "phpcbf"
+    "inilialize": "composer config && composer install",
+    "no-dev": "composer config && composer install --no-dev",
+    "optimize": "composer dump-autoload --optimize",
+    "lint": "phpcs",
+    "fix": "phpcbf"
   }
 }

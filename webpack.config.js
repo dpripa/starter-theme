@@ -1,5 +1,5 @@
 const dotenv = require( 'dotenv' ).config();
-const entry = require( './entry' );
+const entry = require( './package' ).entry;
 const path = require( 'path' );
 const Webpack = require( 'webpack' );
 const BrowserSync = require( 'browser-sync' );
@@ -15,8 +15,8 @@ const {default: ImageminPlugin} = require( 'imagemin-webpack-plugin' );
 const ImageminMozjpeg = require( 'imagemin-mozjpeg' );
 
 const paths = {
-	asset: path.resolve( __dirname, '../asset' ),
-	source: path.resolve( __dirname, '.' )
+	asset: path.resolve( __dirname, './asset' ),
+	src: path.resolve( __dirname, './src' )
 };
 const dirs = {
 	script: 'script',
@@ -108,7 +108,7 @@ if ( isDev ) {
 
 module.exports = {
 	mode: mode,
-	context: paths.source,
+	context: paths.src,
 	entry: entry,
 	output: {
 		filename: `${dirs.script}/[name]${assetPrefix}.js`,
