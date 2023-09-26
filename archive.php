@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>
-<main class="mt-layout" role="main" itemscope itemprop="mainContentOfPage">
+<main class="mnt-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
 		Theme\Tpl::render( 'breadcrumbs' );

@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<?php if ( has_post_thumbnail() ) { ?>
-		<a class="mt-img" href="<?php echo esc_url( get_permalink() ); ?>">
+		<a class="mnt-img" href="<?php echo esc_url( get_permalink() ); ?>">
 			<img
 				data-src="<?php the_post_thumbnail_url( 'ego_card' ); ?>"
 				data-retina="<?php the_post_thumbnail_url( 'ego_card_retina' ); ?>"
