@@ -4,110 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e89b0404b51c4890d23417caf5b1d25",
-    "packages": [
-        {
-            "name": "oowp/framework",
-            "version": "1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:oowp/framework.git",
-                "reference": "b051940e41a93d0772e93f2efcffa55bf352e057"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/oowp/framework/zipball/b051940e41a93d0772e93f2efcffa55bf352e057",
-                "reference": "b051940e41a93d0772e93f2efcffa55bf352e057",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2.0"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^3.3.1",
-                "wp-coding-standards/wpcs": "^2.2.1"
-            },
-            "type": "wordpress-library",
-            "autoload": {
-                "psr-4": {
-                    "O0W7_1\\": "inc/"
-                }
-            },
-            "scripts": {
-                "webpack-start": [
-                    "cd sources && npm run start"
-                ],
-                "webpack-build": [
-                    "cd sources && npm run build"
-                ],
-                "install-no-dev": [
-                    "composer install --no-dev"
-                ],
-                "optimize-autoloader": [
-                    "composer dump-autoload --optimize"
-                ],
-                "lint-php": [
-                    "phpcs"
-                ]
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "developer",
-                    "email": "developer@wp.com",
-                    "homepage": "https://wp.local"
-                }
-            ],
-            "homepage": "https://wp.local",
-            "keywords": [
-                "wordpress"
-            ],
-            "support": {
-                "source": "https://github.com/oowp/framework/tree/1",
-                "issues": "https://github.com/oowp/framework/issues"
-            },
-            "time": "2023-09-18T23:40:49+00:00"
-        }
-    ],
+    "content-hash": "e656ff3c91ab2d5cd5609ba132558e75",
+    "packages": [],
     "packages-dev": [
-        {
-            "name": "oowp/project-tools",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:oowp/project-tools.git",
-                "reference": "e379afe275c5be8648603bde2dc954c2e5065575"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/oowp/project-tools/zipball/e379afe275c5be8648603bde2dc954c2e5065575",
-                "reference": "e379afe275c5be8648603bde2dc954c2e5065575",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "wordpress-library",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "developer",
-                    "email": "developer@wp.com",
-                    "homepage": "https://wp.local"
-                }
-            ],
-            "homepage": "https://wp.local",
-            "keywords": [
-                "wordpress"
-            ],
-            "support": {
-                "source": "https://github.com/oowp/project-tools/tree/main",
-                "issues": "https://github.com/oowp/project-tools/issues"
-            },
-            "time": "2023-09-19T00:52:49+00:00"
-        },
         {
             "name": "squizlabs/php_codesniffer",
             "version": "3.7.2",
@@ -219,9 +118,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "oowp/project-tools": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

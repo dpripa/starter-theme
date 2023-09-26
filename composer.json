@@ -24,23 +24,15 @@
       "MyTheme\\": "inc/"
     }
   },
-  "repositories": [
-    {"type": "github", "url": "git@github.com:oowp/framework.git"},
-    {"type": "github", "url": "git@github.com:oowp/project-tools.git"}
-  ],
   "require": {
-    "php": "^7.2.0",
-    "oowp/framework": "1"
+    "php": "^7.2.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.3.1",
-    "wp-coding-standards/wpcs": "^2.2.1",
-    "oowp/project-tools": "dev-main"
+    "wp-coding-standards/wpcs": "^2.2.1"
   },
   "scripts": {
-    "inilialize": "composer config && composer install",
-    "no-dev": "composer config && composer install --no-dev",
-    "optimize": "composer dump-autoload --optimize",
+    "no-dev": "composer install --no-dev",
     "lint": "phpcs",
     "fix": "phpcbf"
   }

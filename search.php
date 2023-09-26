@@ -9,7 +9,7 @@ get_header();
 <main class="my-theme-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
-		app()->template->render( 'breadcrumbs' );
+		Theme\Tpl::render( 'breadcrumbs' );
 
 		if ( have_posts() ) {
 			?>
@@ -17,13 +17,13 @@ get_header();
 			<?php
 			while ( have_posts() ) {
 				the_post();
-				app()->template->render( 'card-page' );
+				Theme\Tpl::render( 'card-page' );
 			}
 
-			app()->template->render( 'pagination' );
+			Theme\Tpl::render( 'pagination' );
 
 		} else {
-			app()->template->render( 'content-none' );
+			Theme\Tpl::render( 'content-none' );
 		}
 		?>
 	</div>

@@ -6,7 +6,7 @@
 
 namespace MyTheme;
 
-app()->__( 'Sample' );
+__( 'Sample', KEY );
 
 defined( 'ABSPATH' ) || exit;
 
@@ -15,11 +15,11 @@ get_header();
 <main class="my-theme-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
-		app()->template->render( 'breadcrumbs' );
+		Theme\Tpl::render( 'breadcrumbs' );
 
 		while ( have_posts() ) {
 			the_post();
-			app()->template->render( 'content-page' );
+			Theme\Tpl::render( 'content-page' );
 
 			if ( comments_open() || get_comments_number() ) {
 				comments_template();

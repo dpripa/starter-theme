@@ -1,23 +1,18 @@
 <?php
-
 namespace MyTheme;
 
 defined( 'ABSPATH' ) || exit;
 
-final class Singular {
+class Singular {
 	public function __construct() {
-		if ( app()->validate_setup( self::class ) || ! is_singular() ) {
-			return;
-		}
-
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 	}
 
 	public function enqueue_assets(): void {
-		app()->asset->enqueue_style( 'singular' );
+		Theme\Asset::enqueue_style( 'singular' );
 
 		if ( self::is_template( 'template-example' ) ) {
-			app()->asset->enqueue_style( 'template-example' );
+			Theme\Asset::enqueue_style( 'template-example' );
 		}
 	}
 
@@ -39,10 +34,10 @@ final class Singular {
 			return single_cat_title( '', false );
 
 		} elseif ( is_search() ) {
-			return sprintf( esc_html( app()->i18n->__( 'Search Results for "%s"' ) ), get_search_query() );
+			return sprintf( esc_html( __( 'Search Results for "%s"', KEY ) ), get_search_query() );
 
 		} elseif ( is_404() ) {
-			return esc_html( app()->i18n->__( "Oops! That page can't be found." ) );
+			return esc_html( __( "Oops! That page can't be found.", KEY ) );
 		}
 
 		return get_the_title();

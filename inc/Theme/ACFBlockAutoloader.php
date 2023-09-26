@@ -1,25 +1,14 @@
 <?php
+namespace MyTheme\Theme;
 
-namespace MyTheme\Feature;
-
-use O0W7_1\App;
-use O0W7_1\Feature\FS;
-use O0W7_1\Feature\I18n;
+use const MyTheme\KEY;
 
 defined( 'ABSPATH' ) || exit;
 
 class ACFBlockAutoloader {
-	protected $app;
-	protected $fs;
-	protected $i18n;
+	protected const KEY = KEY;
 
-	public function __construct( App $app, FS $fs, I18n $i18n ) {
-		$this->app  = $app;
-		$this->fs   = $fs;
-		$this->i18n = $i18n;
-	}
-
-	public function add_block_type( string $category, string $path, string $title ): void {
+	public static function add_block_type( string $category, string $path, string $title ): void {
 		if (
 			! function_exists( 'acf_register_block_type' ) ||
 			! function_exists( 'register_block_type' )
@@ -27,18 +16,22 @@ class ACFBlockAutoloader {
 			return;
 		}
 
-		$this->add_block_category( $category, $title );
-		$this->add_block_template_autoloader( $category, $path );
+		static::add_block_category( $category, $title );
+		static::add_block_template_autoloader( $category, $path );
 	}
 
-	protected function add_block_category( string $category, string $title ): void {
+	protected static function get_path( string $rel ): string {
+		return Fs::get_path( $rel );
+	}
+
+	protected static function add_block_category( string $category, string $title ): void {
 		add_filter(
 			'block_categories',
 			function ( array $categories ) use ( $category, $title ): array {
 				return array_merge(
 					array(
 						array(
-							'slug'  => $this->app->get_key( $category ),
+							'slug'  => static::KEY . "_$category",
 							'title' => $title,
 						),
 					),
@@ -48,11 +41,11 @@ class ACFBlockAutoloader {
 		);
 	}
 
-	protected function add_block_template_autoloader( string $category, string $path ): void {
+	protected static function add_block_template_autoloader( string $category, string $path ): void {
 		add_action(
 			'acf/init',
 			function() use ( $category, $path ): void {
-				$dir = $this->fs->get_path( $path );
+				$dir = static::get_path( $path );
 
 				if ( ! file_exists( $dir ) ) {
 					return;
@@ -81,9 +74,9 @@ class ACFBlockAutoloader {
 					acf_register_block_type(
 						array(
 							'name'            => $slug,
-							'title'           => $this->i18n->__( $file_headers['name'] ),
-							'description'     => $this->i18n->__( $file_headers['description'] ),
-							'category'        => $this->app->get_key( $category ),
+							'title'           => __( $file_headers['name'], static::KEY ), // phpcs:ignore
+							'description'     => __( $file_headers['description'], static::KEY ), // phpcs:ignore
+							'category'        => static::KEY . "_$category",
 							'icon'            => $file_headers['icon'],
 							'keywords'        => explode( ', ', $file_headers['keywords'] ),
 							'post_types'      => explode( ', ', trim( $file_headers['post_types'] ) ),
@@ -93,7 +86,7 @@ class ACFBlockAutoloader {
 								'align' => false,
 							),
 							'render_callback' => function ( array &$args ) use ( $path, $slug ) {
-								require_once $this->fs->get_path( "${path}/${slug}.php" );
+								require_once static::get_path( "${path}/${slug}.php" );
 							},
 						)
 					);

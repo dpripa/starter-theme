@@ -3,6 +3,5 @@ node_modules
 vendor
 .DS_Store
 .env
-auth.json
 ehthumbs.db
 Thumbs.db

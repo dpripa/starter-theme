@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 			<img
 				data-src="<?php the_post_thumbnail_url( 'ego_card' ); ?>"
 				data-retina="<?php the_post_thumbnail_url( 'ego_card_retina' ); ?>"
-				alt="<?php echo esc_attr( app()->i18n->__( 'Thumbnail for' ) . ': "' . get_the_title() . '"' ); ?>"
+				alt="<?php echo esc_attr( __( 'Thumbnail for', KEY ) . ': "' . get_the_title() . '"' ); ?>"
 			>
 		</a>
 		<?php
@@ -26,8 +26,8 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<a
 		href="<?php echo esc_url( get_permalink() ); ?>"
-		aria-label="<?php echo esc_attr( app()->i18n->__( 'Read more' ) . ': "' . get_the_title() . '"' ); ?>"
+		aria-label="<?php echo esc_attr( __( 'Read more', KEY ) . ': "' . get_the_title() . '"' ); ?>"
 	>
-		<?php echo esc_html( app()->i18n->__( 'Read more' ) ) . ' →'; ?>
+		<?php echo esc_html__( 'Read more', KEY ) . ' →'; ?>
 	</a>
 </article>

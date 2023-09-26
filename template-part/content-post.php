@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 	wp_link_pages(
 		array(
-			'before' => '<div class="pagination">' . esc_html( app()->i18n->__( 'Pages' ) ) . ':',
+			'before' => '<div class="pagination">' . esc_html__( 'Pages', KEY ) . ':',
 			'after'  => '</div>',
 		)
 	);

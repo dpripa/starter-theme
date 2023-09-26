@@ -4,7 +4,7 @@ namespace MyTheme;
 
 defined( 'ABSPATH' ) || exit;
 
-app()->template->render( 'content-footer' );
+Theme\Tpl::render( 'content-footer' );
 
 wp_footer();
 ?>
