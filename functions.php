@@ -1,14 +1,14 @@
 <?php
 
-namespace MyTheme;
+namespace MainTheme;
 
 defined( 'ABSPATH' ) || exit;
 
-const KEY = 'my_theme';
+const KEY = 'main_theme';
 
-$plugin_name = __( 'My Plugin', KEY );
+$plugin_name = __( 'Main Plugin', KEY );
 
-if ( ! class_exists( 'MyPlugin\Setup' ) ) {
+if ( ! class_exists( 'MainPlugin\Setup' ) ) {
 	add_action(
 		'after_setup_theme',
 		function () use ( $plugin_name ) {

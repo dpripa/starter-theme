@@ -1,6 +1,6 @@
 <?php
 
-namespace MyTheme;
+namespace MainTheme;
 
 global $wp_query;
 

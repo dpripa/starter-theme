@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme\Walker;
+namespace MainTheme\Walker;
 
 defined( 'ABSPATH' ) || exit;
 

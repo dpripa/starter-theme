@@ -1,7 +1,7 @@
 <?php
-namespace MyTheme\Theme;
+namespace MainTheme\Theme;
 
-use const MyTheme\KEY;
+use const MainTheme\KEY;
 
 defined( 'ABSPATH' ) || exit;
 

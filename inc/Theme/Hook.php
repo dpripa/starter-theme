@@ -1,9 +1,9 @@
 <?php
-namespace MyTheme\Theme;
+namespace MainTheme\Theme;
 
 defined( 'ABSPATH' ) || exit;
 
-class Hook extends \MyPlugin\Plugin\Hook {
+class Hook extends \MainPlugin\Plugin\Hook {
 	protected const NAMESPACE = __NAMESPACE__;
 
 	public static function add_activation( callable $callback ): void {

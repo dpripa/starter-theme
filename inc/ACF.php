@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme;
+namespace MainTheme;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -11,7 +11,7 @@ class ACF {
 			__( 'Main', KEY )
 		);
 
-		if ( ! \MyPlugin\Plugin\Env::is_dev() ) {
+		if ( ! \MainPlugin\Plugin\Env::is_dev() ) {
 			add_filter( 'acf/settings/show_admin', '__return_false' );
 		}
 	}

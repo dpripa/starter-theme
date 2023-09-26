@@ -4,7 +4,7 @@
  * Template Post Type: post, page
  */
 
-namespace MyTheme;
+namespace MainTheme;
 
 __( 'Sample', KEY );
 

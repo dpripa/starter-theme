@@ -1,12 +1,12 @@
 <?php
 
-namespace MyTheme;
+namespace MainTheme;
 
 defined( 'ABSPATH' ) || exit;
 ?>
 <header class="my-theme-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	<div class="container">
-		<a class="my-theme-header__logo my-theme-logo" href="<?php echo esc_url( \MyPlugin\Plugin\Url::get_home() ); ?>">
+		<a class="my-theme-header__logo my-theme-logo" href="<?php echo esc_url( \MainPlugin\Plugin\Url::get_home() ); ?>">
 			<img
 				class="my-theme-logo__emblem"
 				src="<?php echo esc_url( Theme\Fs::get_url( 'images/logo.svg', true ) ); ?>"

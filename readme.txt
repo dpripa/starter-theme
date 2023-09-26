@@ -1,4 +1,4 @@
-=== Theme ===
+=== Main Theme ===
 
 Stable tag: 1.0.0
 Contributors: developer
