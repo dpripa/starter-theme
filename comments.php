@@ -10,7 +10,7 @@ if ( post_password_required() ) {
 
 $comment_count = (int) get_comments_number();
 ?>
-<section class="my-theme-comments">
+<section class="mt-comments">
 	<?php if ( have_comments() ) { ?>
 		<h2>
 			<?php
