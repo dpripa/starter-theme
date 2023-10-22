@@ -2,15 +2,15 @@
 Welcome to the efficient environment for WordPress development.
 
 ### Requirements
-- PHP >=7.2.0
-- NVM
+- `PHP >=7.2.0`
+- `NVM`
 
 ### CLI
 You can find all available commands in the `Makefile`. Have a nice initialization!\
-__NOTE:__ the .env file must be defined and contain the required parameters (use the .env.example file as reference).
+__NOTE:__ the `.env` file must be defined and contain the required parameters (use the `.env.example` file as reference).
 
 ### GitHub Actions
-Before using workflows, you should define `secret` variables in the project repository settings (General > Security > Secrets and variables > Actions).
+Before using workflows, you should define `secret` variables in the project repository settings ([docs](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions)).
 - For `deploy-to-prod` (Production):
 	- `PROD_FTP_HOST`;
 	- `PROD_FTP_PATH`;
