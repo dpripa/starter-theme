@@ -1,5 +1,5 @@
 {
-  "name": "main/theme",
+  "name": "dev/theme",
   "version": "1.0.0",
   "type": "wordpress-theme",
   "description": "",
@@ -25,7 +25,7 @@
     }
   },
   "require": {
-    "php": "^7.2.0"
+    "php": ">=7.2.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.3.1",
