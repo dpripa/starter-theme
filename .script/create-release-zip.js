@@ -2,10 +2,16 @@ const fs = require( 'fs' );
 const path = require('path');
 const archiver = require( 'archiver' );
 const log = require( 'log-beautify' );
-const release = require( '../release.json' );
+const release = require( '../package.json' ).release;
 const name = path.basename(path.dirname(__dirname));
-const output = fs.createWriteStream( './release/' + name + '.zip' );
-const archive = archiver( 'zip', {});
+const destination = './release';
+
+if ( ! fs.existsSync( destination ) ) {
+	fs.mkdirSync( destination, { recursive: true } );
+}
+
+const output = fs.createWriteStream( destination + '/' + name + '.zip' );
+const archive = archiver( 'zip', {} );
 
 output.on( 'close', function() {
 	console.log( '\n' );
@@ -21,12 +27,12 @@ archive.pipe( output );
 
 let directories = release.directories;
 for ( let i = 0; i < directories.length; i++ ) {
-	archive.directory( '../' + directories[i], name + '/' + directories[i], null );
+	archive.directory( directories[i], name + '/' + directories[i], null );
 }
 
 let files = release.files;
 for ( let i = 0; i < files.length; i++ ) {
-	archive.file( '../' + files[i], { name: name + '/' + files[i] });
+	archive.file( files[i], { name: name + '/' + files[i] });
 }
 
 archive.finalize();
