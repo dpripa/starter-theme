@@ -1,30 +1,37 @@
 <?php
-
-namespace MainTheme;
+namespace MyTheme;
 
 defined( 'ABSPATH' ) || exit;
 
-const KEY = 'main_theme';
+const KEY = 'my_theme';
 
-$plugin_name = __( 'Main Plugin', KEY );
+$parent_plugin_name  = __( 'My Plugin', KEY );
+$parent_plugin_class = 'MyPlugin\Setup';
+$fallback_theme      = 'twentytwentyone';
 
-if ( ! class_exists( 'MainPlugin\Setup' ) ) {
+function check_parent_plugin_activation( string $parent_plugin_name, string $parent_plugin_class, $fallback_theme ): bool {
+	if ( class_exists( $parent_plugin_class ) ) {
+		return true;
+	}
+
 	add_action(
 		'after_setup_theme',
-		function () use ( $plugin_name ) {
-			update_option( 'template', 'twentytwentyone' );
-			update_option( 'stylesheet', 'twentytwentyone' );
+		function () use ( $parent_plugin_name, $fallback_theme ) {
+			update_option( 'template', $fallback_theme );
+			update_option( 'stylesheet', $fallback_theme );
 			delete_option( 'current_theme' );
 
 			if ( ! is_admin() ) {
 				header( 'Location: ' . get_home_url( '/' ), true, 303 );
+
+				return;
 			}
 
 			load_theme_textdomain( KEY, __DIR__ . '/lang' );
 
 			add_action(
 				'admin_notices',
-				function () use ( $plugin_name ): void {
+				function () use ( $parent_plugin_name ): void {
 					?>
 					<div class="notice notice-error is-dismissible" style="padding-top: 10px; padding-bottom: 10px;">
 						<?php
@@ -33,7 +40,7 @@ if ( ! class_exists( 'MainPlugin\Setup' ) ) {
 							'<b>' . esc_html__( 'Error', KEY ) . ':</b>',
 							'<b>"' . esc_html( get_file_data( __DIR__ . '/style.css', array( 'name' => 'Theme Name' ) )['name'] ) . '"</b>',
 							'<b>' . esc_html__( 'needs', KEY ) . '</b>',
-							'<b>"' . esc_html( $plugin_name ) . '"</b>',
+							'<b>"' . esc_html( $parent_plugin_name ) . '"</b>',
 							'<b>' . esc_html__( 'activated', KEY ) . '</b>',
 							'<b><a href="' . esc_html( get_admin_url( is_multisite() ? get_current_blog_id() : null, 'plugins.php' ) ) . '">' .
 							esc_html__( 'Go to activation', KEY ) .
@@ -47,6 +54,10 @@ if ( ! class_exists( 'MainPlugin\Setup' ) ) {
 		}
 	);
 
+	return false;
+}
+
+if ( ! check_parent_plugin_activation( $parent_plugin_name, $parent_plugin_class, $fallback_theme ) ) {
 	return;
 }
 

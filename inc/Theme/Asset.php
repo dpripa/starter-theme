@@ -1,11 +1,11 @@
 <?php
-namespace MainTheme\Theme;
+namespace MyTheme\Theme;
 
-use const MainTheme\KEY;
+use const MyTheme\KEY;
 
 defined( 'ABSPATH' ) || exit;
 
-class Asset extends \MainPlugin\Plugin\Asset {
+class Asset extends \MyPlugin\Plugin\Asset {
 	protected const KEY = KEY;
 
 	protected static function get_url( string $rel ): string {

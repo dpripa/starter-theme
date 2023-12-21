@@ -36,6 +36,36 @@
       "./style/setting.scss"
     ]
   },
+  "release": {
+    "directories": [
+      "acf-block",
+      "acf-json",
+      "asset",
+      "inc",
+      "lang",
+      "template-part",
+      "templates",
+      "vendor"
+    ],
+    "files": [
+      "404.php",
+      "archive.php",
+      "comments.php",
+      "footer.php",
+      "functions.php",
+      "header.php",
+      "index.php",
+      "license.txt",
+      "page.php",
+      "readme.txt",
+      "search.php",
+      "searchform.php",
+      "sidebar.php",
+      "single.php",
+      "style.css",
+      "wpml-config.xml"
+    ]
+  },
   "dependencies": {
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
