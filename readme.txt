@@ -11,6 +11,7 @@ Tags:
 
 == Description ==
 
+The WordPress Theme
 
 == Changelog ==
 
