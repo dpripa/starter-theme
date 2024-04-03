@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <header class="mnt-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	<div class="container">
-		<a class="mnt-header__logo mnt-logo" href="<?php echo esc_url( \MyPlugin\Plugin\Url::get_home() ); ?>">
+		<a class="mnt-header__logo mnt-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img
 				class="mnt-logo__emblem"
 				src="<?php echo esc_url( Theme\Fs::get_url( 'images/logo.svg', true ) ); ?>"

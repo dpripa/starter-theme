@@ -5,12 +5,17 @@ defined( 'ABSPATH' ) || exit;
 
 const KEY = 'my_theme';
 
-$parent_plugin_name  = __( 'My Plugin', KEY );
-$parent_plugin_class = 'MyPlugin\Setup';
-$fallback_theme      = 'twentytwentyone';
+$parent_plugin_name = __( 'My Plugin', KEY );
+$parent_plugin_path = 'wp-starter-plugin/index.php';
+$fallback_theme     = 'twentytwentyone';
 
-function check_parent_plugin_activation( string $parent_plugin_name, string $parent_plugin_class, $fallback_theme ): bool {
-	if ( class_exists( $parent_plugin_class ) ) {
+function check_parent_plugin_activation( string $parent_plugin_name, string $parent_plugin_path, $fallback_theme ): bool {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+	if (
+		is_plugin_active( $parent_plugin_path ) ||
+		! activate_plugins( array( $parent_plugin_path ) ) instanceof \WP_Error
+	) {
 		return true;
 	}
 
@@ -57,7 +62,7 @@ function check_parent_plugin_activation( string $parent_plugin_name, string $par
 	return false;
 }
 
-if ( ! check_parent_plugin_activation( $parent_plugin_name, $parent_plugin_class, $fallback_theme ) ) {
+if ( ! check_parent_plugin_activation( $parent_plugin_name, $parent_plugin_path, $fallback_theme ) ) {
 	return;
 }
 

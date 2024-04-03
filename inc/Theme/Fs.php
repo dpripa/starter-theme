@@ -3,7 +3,7 @@ namespace MyTheme\Theme;
 
 defined( 'ABSPATH' ) || exit;
 
-class Fs {
+class Fs extends \MyPlugin\Plugin\Fs {
 	public static function get_url( string $rel = '', bool $stamp = false ): string {
 		$url = get_theme_file_uri( $rel );
 
