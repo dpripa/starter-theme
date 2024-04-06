@@ -11,7 +11,7 @@ class ACF {
 			__( 'Main', KEY )
 		);
 
-		if ( ! \MyPlugin\Plugin\Env::is_dev() ) {
+		if ( ! Theme\Env::is_dev() ) {
 			add_filter( 'acf/settings/show_admin', '__return_false' );
 		}
 	}

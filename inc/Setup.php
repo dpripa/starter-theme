@@ -5,6 +5,8 @@ defined( 'ABSPATH' ) || exit;
 
 class Setup {
 	public function __construct() {
+		new Theme();
+
 		add_action( 'after_setup_theme', array( $this, 'init' ) );
 	}
 
