@@ -9,10 +9,10 @@ class Singular {
 	}
 
 	public function enqueue_assets(): void {
-		Theme\Asset::enqueue_style( 'singular' );
+		Asset::enqueue_style( 'singular' );
 
 		if ( self::is_template( 'template-example' ) ) {
-			Theme\Asset::enqueue_style( 'template-example' );
+			Asset::enqueue_style( 'template-example' );
 		}
 	}
 

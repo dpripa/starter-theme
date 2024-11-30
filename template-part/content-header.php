@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 		<a class="mnt-header__logo mnt-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img
 				class="mnt-logo__emblem"
-				src="<?php echo esc_url( Theme\Fs::get_url( 'images/logo.svg', true ) ); ?>"
+				src="<?php echo esc_url( Fs::get_url( 'images/logo.svg', true ) ); ?>"
 				alt="<?php echo esc_attr__( 'Logo', KEY ); ?>"
 			>
 			<span class="mnt-logo__label">

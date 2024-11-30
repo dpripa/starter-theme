@@ -16,4 +16,4 @@ defined( 'ABSPATH' ) || exit;
 <?php
 wp_body_open();
 
-Theme\Tpl::render( 'content-header' );
+Tpl::render( 'content-header' );

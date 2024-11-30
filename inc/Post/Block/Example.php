@@ -1,10 +1,9 @@
 <?php
-namespace MyTheme;
+namespace Kyhnia\Post\Block;
 
 defined( 'ABSPATH' ) || exit;
 
-class Theme {
+class Example {
 	public function __construct() {
-		new Theme\Env();
 	}
 }
