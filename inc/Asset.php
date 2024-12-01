@@ -14,7 +14,7 @@ class Asset {
 	/**
 	 * @throws Exception
 	 */
-	public static function enqueue_script( string $name, array $deps = array(), array $args = array(), bool $in_footer = true ): void {
+	public static function enqueue_script( string $name, array $deps = array(), array $args = array(), bool $in_footer = true, ?string $args_object_name = null ): void {
 		$key      = static::get_key( $name );
 		$filename = $name . static::POSTFIX . '.js';
 		$rel      = static::ASSET_DIR . '/' . static::SCRIPT_DIR . '/' . $filename;
@@ -28,7 +28,7 @@ class Asset {
 		wp_enqueue_script( $key, $url, $deps, filemtime( $path ), $in_footer );
 
 		if ( $args ) {
-			wp_localize_script( $key, $key, $args );
+			wp_localize_script( $key, $args_object_name ?: $key, $args );
 		}
 	}
 
@@ -77,7 +77,7 @@ class Asset {
 		wp_enqueue_style( static::get_key( $name ), $url, false, null ); // phpcs:ignore
 	}
 
-	protected static function get_key( string $name ): string {
+	public static function get_key( string $name ): string {
 		return KEY . '_' . str_replace( '-', '_', $name );
 	}
 }
