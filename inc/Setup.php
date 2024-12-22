@@ -7,6 +7,8 @@ defined( 'ABSPATH' ) || exit;
 
 class Setup {
 	public function __construct() {
+		new Activation();
+		new Deactivation();
 		new Env();
 
 		add_action( 'after_setup_theme', array( $this, 'init' ) );
