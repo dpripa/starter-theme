@@ -34,10 +34,10 @@ class Singular {
 			return single_cat_title( '', false );
 
 		} elseif ( is_search() ) {
-			return sprintf( esc_html( __( 'Search Results for "%s"', KEY ) ), get_search_query() );
+			return sprintf( esc_html( __( 'Search Results for "%s"', 'my-theme' ) ), get_search_query() );
 
 		} elseif ( is_404() ) {
-			return esc_html( __( "Oops! That page can't be found.", KEY ) );
+			return esc_html( __( "Oops! That page can't be found.", 'my-theme' ) );
 		}
 
 		return get_the_title();

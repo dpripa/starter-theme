@@ -15,7 +15,7 @@ class Setup {
 	}
 
 	public function init(): void {
-		load_theme_textdomain( KEY, Fs::get_path( 'lang' ) );
+		load_theme_textdomain( 'my-theme', Fs::get_path( 'lang' ) );
 
 		new Plugin();
 		new Admin();

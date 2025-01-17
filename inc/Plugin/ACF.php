@@ -10,8 +10,8 @@ use const MyTheme\KEY;
 defined( 'ABSPATH' ) || exit;
 
 class ACF extends RequiredPlugin {
-	protected $file = 'advanced-custom-fields-pro/acf.php';
-	protected $name = 'Advanced Custom Fields PRO';
+	protected string $file = 'advanced-custom-fields-pro/acf.php';
+	protected string $name = 'Advanced Custom Fields PRO';
 
 	public static function add_block_type( string $post_type, string $title, string $field_namespace ): void {
 		if (
@@ -83,8 +83,8 @@ class ACF extends RequiredPlugin {
 					acf_register_block_type(
 						array(
 							'name'            => $slug,
-							'title'           => __( $file_headers['name'], KEY ), // phpcs:ignore
-							'description'     => __( $file_headers['description'], KEY ), // phpcs:ignore
+							'title'           => __( $file_headers['name'], 'my-theme' ), // phpcs:ignore
+							'description'     => __( $file_headers['description'], 'my-theme' ), // phpcs:ignore
 							'category'        => KEY . "_$post_type",
 							'icon'            => $file_headers['icon'],
 							'keywords'        => explode( ', ', $file_headers['keywords'] ),

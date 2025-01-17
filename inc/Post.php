@@ -9,7 +9,7 @@ class Post {
 	public function __construct() {
 		Plugin\ACF::add_block_type(
 			static::KEY,
-			__( 'Kyhnia\'s layout', KEY ),
+			__( 'My Theme layout', 'my-theme' ),
 			static::class . '\Block'
 		);
 	}

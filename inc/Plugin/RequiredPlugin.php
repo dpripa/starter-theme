@@ -8,8 +8,8 @@ use const MyTheme\KEY;
 defined( 'ABSPATH' ) || exit;
 
 abstract class RequiredPlugin {
-	protected $file;
-	protected $name;
+	protected string $file;
+	protected string $name;
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'lock_deactivation' ) );
@@ -25,22 +25,22 @@ abstract class RequiredPlugin {
 				if ( is_admin() ) {
 					Notice::render(
 						sprintf(
-							__( '%s not found. Install and activate it now!', KEY ),
+							__( '%s not found. Install and activate it now!', 'my-theme' ),
 							$this->name
 						),
 						'error'
 					);
 				} else {
 					wp_die(
-						esc_html__( 'Here is the critical error. Please, check the details in the admin panel.', KEY ),
-						esc_html__( 'Error', KEY )
+						esc_html__( 'Here is the critical error. Please, check the details in the admin panel.', 'my-theme' ),
+						esc_html__( 'Error', 'my-theme' )
 					);
 				}
 			} else {
 				if ( is_admin() ) {
 					Notice::render(
 						sprintf(
-							__( 'It\'s not allowed to deactivate %s!', KEY ),
+							__( 'It\'s not allowed to deactivate %s!', 'my-theme' ),
 							$this->name
 						),
 						'error'

@@ -6,7 +6,7 @@
 
 namespace MyTheme;
 
-__( 'Sample', KEY );
+__( 'Sample', 'my-theme' );
 
 defined( 'ABSPATH' ) || exit;
 
