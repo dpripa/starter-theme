@@ -1,9 +1,11 @@
 <?php
 namespace MyTheme\Walker;
 
+use Walker_Nav_Menu;
+
 defined( 'ABSPATH' ) || exit;
 
-class MainMenu extends \Walker_Nav_Menu {
+class MainMenu extends Walker_Nav_Menu {
 	public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ): void {
 		$menu_item = $data_object;
 
