@@ -10,9 +10,14 @@ use const MyTheme\KEY;
 defined( 'ABSPATH' ) || exit;
 
 class ACF extends RequiredPlugin {
+	use Helper\DashToCamelcase;
+
 	protected string $file = 'advanced-custom-fields-pro/acf.php';
 	protected string $name = 'Advanced Custom Fields PRO';
 
+	/**
+	 * @throws Exception
+	 */
 	public static function add_block_type( string $post_type, string $title, string $field_namespace ): void {
 		if (
 			! function_exists( 'acf_register_block_type' ) ||
@@ -105,7 +110,7 @@ class ACF extends RequiredPlugin {
 	}
 
 	protected static function register_block_fields( string $slug, string $field_namespace ): void {
-		$classname = $field_namespace . '\\' . Helper::dash_to_camelcase( $slug, true );
+		$classname = $field_namespace . '\\' . Helper\DashToCamelcase::dash_to_camelcase( $slug, true );
 
 		if ( ! class_exists( $classname ) ) {
 			return;
