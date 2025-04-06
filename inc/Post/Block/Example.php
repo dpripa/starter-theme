@@ -1,5 +1,5 @@
 <?php
-namespace Kyhnia\Post\Block;
+namespace MyTheme\Post\Block;
 
 defined( 'ABSPATH' ) || exit;
 
