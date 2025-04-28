@@ -50,12 +50,12 @@ class ACF extends RequiredPlugin {
 	protected static function register_blocks( string $post_type, string $field_namespace ): void {
 		add_action(
 			'acf/init',
-			function() use ( $post_type, $field_namespace ): void {
+			function () use ( $post_type, $field_namespace ): void {
 				$path = "acf-block/$post_type";
 				$dir  = Fs::get_path( $path );
 
 				if ( ! file_exists( $dir ) ) {
-					throw new Exception( "No \"$path\" directory was found" );
+					throw new Exception( esc_html( "The \"$dir\" directory does not exist" ) );
 				}
 
 				$dir_iterator = new DirectoryIterator( $dir );
@@ -77,7 +77,7 @@ class ACF extends RequiredPlugin {
 					);
 
 					if ( empty( $file_headers['name'] ) ) {
-						throw new Exception( "Block Name file header is required in the \"$slug\".php template" );
+						throw new Exception( esc_html( "The \"$slug.php\" file does not have a block name" ) );
 					}
 
 					$file_headers['description'] = $file_headers['description'] ?? '';
@@ -99,7 +99,7 @@ class ACF extends RequiredPlugin {
 								'mode'  => false,
 								'align' => false,
 							),
-							'render_callback' => function ( array &$args ) use ( $path, $slug ) {
+							'render_callback' => function ( array &$args ) use ( $path, $slug ) { // phpcs:ignore
 								require_once Fs::get_path( "$path/$slug.php" );
 							},
 						)

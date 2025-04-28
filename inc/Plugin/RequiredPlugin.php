@@ -36,7 +36,7 @@ abstract class RequiredPlugin {
 						esc_html__( 'Error', 'my-theme' )
 					);
 				}
-			} else {
+			} else { // phpcs:ignore
 				if ( is_admin() ) {
 					Notice::render(
 						sprintf(
