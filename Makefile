@@ -1,17 +1,23 @@
 init:
-	composer install && make nvm-use && npm install && npm run build
+	composer install && \
+	NVM_DIR="$${HOME}/.nvm" && . "$${NVM_DIR}/nvm.sh" && nvm use && \
+	npm install && npm run build
 
 start-watch:
-	make nvm-use && npm run start
+	NVM_DIR="$${HOME}/.nvm" && . "$${NVM_DIR}/nvm.sh" && nvm use && \
+ 	npm run start
 
 build-src:
-	make nvm-use && npm run build
+	NVM_DIR="$${HOME}/.nvm" && . "$${NVM_DIR}/nvm.sh" && nvm use && \
+ 	npm run build
 
 create-release-zip:
-	make lint && make build-src && composer run no-dev && npm run create-release-zip && composer install
+	make lint && make build-src && composer run no-dev && \
+	npm run create-release-zip && composer install
 
 deploy-to-dev:
-	make build-src && composer run no-dev && npm run deploy-to-dev && composer install
+	make build-src && composer run no-dev && \
+	npm run deploy-to-dev && composer install
 
 fix:
 	composer run fix && npm run fix-style && npm run fix-script
@@ -19,10 +25,6 @@ fix:
 lint:
 	composer run lint && npm run lint-style && npm run lint-script
 
-# NOTE. The following commands are part of the automation, so you don't need to use them manually:
-
 prepare-to-release:
-	make lint && npm run build && composer run no-dev
-
-nvm-use:
-	NVM_DIR="$${HOME}/.nvm" && . "$${NVM_DIR}/nvm.sh" && nvm use
+	make lint && npm run build && \
+	composer run no-dev
