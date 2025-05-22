@@ -3,7 +3,6 @@ namespace MyTheme\Plugin;
 
 use WP_Error;
 use MyTheme\Admin\Notice;
-use const MyTheme\KEY;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -36,16 +35,14 @@ abstract class RequiredPlugin {
 						esc_html__( 'Error', 'my-theme' )
 					);
 				}
-			} else { // phpcs:ignore
-				if ( is_admin() ) {
-					Notice::render(
-						sprintf(
-							__( 'It\'s not allowed to deactivate %s!', 'my-theme' ),
-							$this->name
-						),
-						'error'
-					);
-				}
+			} elseif ( is_admin() ) {
+				Notice::render(
+					sprintf(
+						__( 'It\'s not allowed to deactivate %s!', 'my-theme' ),
+						$this->name
+					),
+					'error'
+				);
 			}
 		}
 	}
