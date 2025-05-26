@@ -68,5 +68,4 @@ jobs:
                       package-lock.json
                       phpcs.xml
                       README.md
-                      release.json
                       webpack.config.js

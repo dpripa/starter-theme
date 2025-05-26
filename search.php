@@ -8,7 +8,7 @@ get_header();
 <main class="mnt-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
-		Tpl::render( 'breadcrumbs' );
+		View::render( 'breadcrumbs' );
 
 		if ( have_posts() ) {
 			?>
@@ -16,13 +16,13 @@ get_header();
 			<?php
 			while ( have_posts() ) {
 				the_post();
-				Tpl::render( 'card-page' );
+				View::render( 'card-page' );
 			}
 
-			Tpl::render( 'pagination' );
+			View::render( 'pagination' );
 
 		} else {
-			Tpl::render( 'content-none' );
+			View::render( 'content-none' );
 		}
 		?>
 	</div>

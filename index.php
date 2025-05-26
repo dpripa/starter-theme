@@ -19,13 +19,13 @@ $page_title = Singular::get_title();
 
 			while ( have_posts() ) {
 				the_post();
-				Tpl::render( 'card-' . get_post_type() );
+				View::render( 'card-' . get_post_type() );
 			}
 
-			Tpl::render( 'pagination' );
+			View::render( 'pagination' );
 
 		} else {
-			Tpl::render( 'content-none' );
+			View::render( 'content-none' );
 		}
 		?>
 	</div>

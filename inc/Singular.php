@@ -1,6 +1,8 @@
 <?php
 namespace MyTheme;
 
+use Exception;
+
 defined( 'ABSPATH' ) || exit;
 
 class Singular {
@@ -8,6 +10,9 @@ class Singular {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 	}
 
+	/**
+	 * @throws Exception
+	 */
 	public function enqueue_assets(): void {
 		Asset::enqueue_style( 'singular' );
 

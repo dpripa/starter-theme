@@ -43,9 +43,9 @@
       "asset",
       "inc",
       "lang",
-      "template-part",
       "templates",
-      "vendor"
+      "vendor",
+      "view"
     ],
     "files": [
       "404.php",

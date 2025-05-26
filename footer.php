@@ -3,7 +3,7 @@ namespace MyTheme;
 
 defined( 'ABSPATH' ) || exit;
 
-Tpl::render( 'content-footer' );
+View::render( 'content-footer' );
 
 wp_footer();
 ?>

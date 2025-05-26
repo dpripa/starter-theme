@@ -8,11 +8,11 @@ get_header();
 <main class="mnt-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
-		Tpl::render( 'breadcrumbs' );
+		View::render( 'breadcrumbs' );
 
 		while ( have_posts() ) {
 			the_post();
-			Tpl::render( 'content-' . get_post_type() );
+			View::render( 'content-' . get_post_type() );
 
 			if ( comments_open() || get_comments_number() ) {
 				comments_template();
