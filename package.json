@@ -23,17 +23,17 @@
   ],
   "entry": {
     "main": [
-      "./script/main.js",
-      "./style/main.scss"
+      "./js/main.js",
+      "./css/main.scss"
     ],
     "singular": [
-      "./style/singular.scss"
+      "./css/singular.scss"
     ],
     "template-sample": [
-      "./style/templates/template-sample.scss"
+      "./css/templates/template-sample.scss"
     ],
     "setting": [
-      "./style/setting.scss"
+      "./css/setting.scss"
     ]
   },
   "release": {
