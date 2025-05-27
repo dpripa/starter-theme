@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme\Helper;
+namespace StarterTheme\Helper;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme\Walker;
+namespace StarterTheme\Walker;
 
 use Walker_Nav_Menu;
 

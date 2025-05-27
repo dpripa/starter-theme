@@ -1,6 +1,6 @@
 <?php
 
-namespace MyTheme;
+namespace StarterTheme;
 
 defined( 'ABSPATH' ) || exit;
 ?>
@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 	wp_link_pages(
 		array(
-			'before' => '<div class="pagination">' . esc_html__( 'Pages', 'my-theme' ) . ':',
+			'before' => '<div class="pagination">' . esc_html__( 'Pages', 'starter-theme' ) . ':',
 			'after'  => '</div>',
 		)
 	);

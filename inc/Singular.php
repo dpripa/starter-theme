@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme;
+namespace StarterTheme;
 
 use Exception;
 
@@ -39,10 +39,10 @@ class Singular {
 			return single_cat_title( '', false );
 
 		} elseif ( is_search() ) {
-			return sprintf( esc_html( __( 'Search Results for "%s"', 'my-theme' ) ), get_search_query() );
+			return sprintf( esc_html( __( 'Search Results for "%s"', 'starter-theme' ) ), get_search_query() );
 
 		} elseif ( is_404() ) {
-			return esc_html( __( "Oops! That page can't be found.", 'my-theme' ) );
+			return esc_html( __( "Oops! That page can't be found.", 'starter-theme' ) );
 		}
 
 		return get_the_title();

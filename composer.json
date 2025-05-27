@@ -1,15 +1,15 @@
 {
-  "name": "wp/theme",
+  "name": "omgpress/starter-theme",
   "version": "1.0.0",
   "type": "wordpress-theme",
-  "description": "",
-  "homepage": "https://wp.local",
+  "description": "The WordPress Theme",
+  "homepage": "https://omgpress.com/starter?type=theme",
   "license": "GPL-2.0-or-later",
   "authors": [
     {
-      "name": "developer",
-      "email": "developer@wp.local",
-      "homepage": "https://wp.local"
+      "name": "OmgPress",
+      "email": "hello@omgpress.com",
+      "homepage": "https://omgpress.com"
     }
   ],
   "keywords": [
@@ -24,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "MyTheme\\": "inc/"
+      "StarterTheme\\": "inc/"
     }
   },
   "require": {

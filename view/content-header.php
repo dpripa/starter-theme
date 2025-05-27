@@ -1,6 +1,6 @@
 <?php
 
-namespace MyTheme;
+namespace StarterTheme;
 
 defined( 'ABSPATH' ) || exit;
 ?>
@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 			<img
 				class="mnt-logo__emblem"
 				src="<?php echo esc_url( Fs::get_url( 'img/logo.svg', true ) ); ?>"
-				alt="<?php echo esc_attr__( 'Logo', 'my-theme' ); ?>"
+				alt="<?php echo esc_attr__( 'Logo', 'starter-theme' ); ?>"
 			>
 			<span class="mnt-logo__label">
 			<span class="mnt-logo__title">

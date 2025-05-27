@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme;
+namespace StarterTheme;
 
 use Exception;
 

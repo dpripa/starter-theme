@@ -1,7 +1,7 @@
 <?php
-namespace MyTheme\Admin;
+namespace StarterTheme\Admin;
 
-use const MyTheme\KEY;
+use const StarterTheme\KEY;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme\Post\Block;
+namespace StarterTheme\Post\Block;
 
 defined( 'ABSPATH' ) || exit;
 

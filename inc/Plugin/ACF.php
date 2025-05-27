@@ -1,11 +1,11 @@
 <?php
-namespace MyTheme\Plugin;
+namespace StarterTheme\Plugin;
 
 use DirectoryIterator;
 use Exception;
-use MyTheme\Fs;
-use MyTheme\Helper;
-use const MyTheme\KEY;
+use StarterTheme\Fs;
+use StarterTheme\Helper;
+use const StarterTheme\KEY;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -88,8 +88,8 @@ class ACF extends RequiredPlugin {
 					acf_register_block_type(
 						array(
 							'name'            => $slug,
-							'title'           => __( $file_headers['name'], 'my-theme' ), // phpcs:ignore
-							'description'     => __( $file_headers['description'], 'my-theme' ), // phpcs:ignore
+							'title'           => __( $file_headers['name'], 'starter-theme' ), // phpcs:ignore
+							'description'     => __( $file_headers['description'], 'starter-theme' ), // phpcs:ignore
 							'category'        => KEY . "_$post_type",
 							'icon'            => $file_headers['icon'],
 							'keywords'        => explode( ', ', $file_headers['keywords'] ),

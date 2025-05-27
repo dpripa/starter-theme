@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme;
+namespace StarterTheme;
 
 use Exception;
 
@@ -15,7 +15,7 @@ class Setup {
 	}
 
 	public function init(): void {
-		load_theme_textdomain( 'my-theme', Fs::get_path( 'lang' ) );
+		load_theme_textdomain( 'starter-theme', Fs::get_path( 'lang' ) );
 
 		new Plugin();
 		new Admin();

@@ -1,5 +1,5 @@
 <?php
-namespace MyTheme;
+namespace StarterTheme;
 
 use Exception;
 
@@ -14,7 +14,7 @@ class Post {
 	public function __construct() {
 		Plugin\ACF::add_block_type(
 			static::KEY,
-			__( 'My Theme layout', 'my-theme' ),
+			__( 'Starter Theme Layout', 'starter-theme' ),
 			static::class . '\Block'
 		);
 	}

@@ -1,11 +1,11 @@
 <?php
-namespace MyTheme;
+namespace StarterTheme;
 
 use Exception;
 
 defined( 'ABSPATH' ) || exit;
 
-const KEY = 'my_theme';
+const KEY = 'starter_theme';
 
 $autoload = __DIR__ . '/vendor/autoload.php';
 

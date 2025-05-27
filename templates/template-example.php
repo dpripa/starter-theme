@@ -4,9 +4,9 @@
  * Template Post Type: post, page
  */
 
-namespace MyTheme;
+namespace StarterTheme;
 
-__( 'Sample', 'my-theme' );
+__( 'Sample', 'starter-theme' );
 
 defined( 'ABSPATH' ) || exit;
 

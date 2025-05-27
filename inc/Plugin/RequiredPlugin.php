@@ -1,8 +1,8 @@
 <?php
-namespace MyTheme\Plugin;
+namespace StarterTheme\Plugin;
 
 use WP_Error;
-use MyTheme\Admin\Notice;
+use StarterTheme\Admin\Notice;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -24,21 +24,21 @@ abstract class RequiredPlugin {
 				if ( is_admin() ) {
 					Notice::render(
 						sprintf(
-							__( '%s not found. Install and activate it now!', 'my-theme' ),
+							__( '%s not found. Install and activate it now!', 'starter-theme' ),
 							$this->name
 						),
 						'error'
 					);
 				} else {
 					wp_die(
-						esc_html__( 'Here is the critical error. Please, check the details in the admin panel.', 'my-theme' ),
-						esc_html__( 'Error', 'my-theme' )
+						esc_html__( 'Here is the critical error. Please, check the details in the admin panel.', 'starter-theme' ),
+						esc_html__( 'Error', 'starter-theme' )
 					);
 				}
 			} elseif ( is_admin() ) {
 				Notice::render(
 					sprintf(
-						__( 'It\'s not allowed to deactivate %s!', 'my-theme' ),
+						__( 'It\'s not allowed to deactivate %s!', 'starter-theme' ),
 						$this->name
 					),
 					'error'

@@ -1,6 +1,6 @@
 <?php
 
-namespace MyTheme;
+namespace StarterTheme;
 
 defined( 'ABSPATH' ) || exit;
 
