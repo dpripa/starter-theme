@@ -8,21 +8,21 @@ get_header();
 <main class="mnt-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
 		<?php
-		View::render( 'breadcrumbs' );
+		app()->view()->render( 'breadcrumbs' );
 
 		if ( have_posts() ) {
 			?>
-			<h1><?php echo esc_html( Singular::get_title() ); ?></h1>
+			<h1><?php echo esc_html( app()->singular()->get_title() ); ?></h1>
 			<?php
 			while ( have_posts() ) {
 				the_post();
-				View::render( 'card-' . get_post_type() );
+				app()->view()->render( 'card-' . get_post_type() );
 			}
 
-			View::render( 'pagination' );
+			app()->view()->render( 'pagination' );
 
 		} else {
-			View::render( 'content-none' );
+			app()->view()->render( 'content-none' );
 		}
 		?>
 	</div>

@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 		<a class="mnt-header__logo mnt-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img
 				class="mnt-logo__emblem"
-				src="<?php echo esc_url( Fs::get_url( 'img/logo.svg', true ) ); ?>"
+				src="<?php echo esc_url( app()->fs()->get_url( 'img/logo.svg', true ) ); ?>"
 				alt="<?php echo esc_attr__( 'Logo', 'starter-theme' ); ?>"
 			>
 			<span class="mnt-logo__label">
@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => KEY . '_main',
+					'theme_location' => app()->get_key( 'main' ),
 					'menu_class'     => 'ul-clean ul-inline-block',
 					'container'      => 'ul',
 				)

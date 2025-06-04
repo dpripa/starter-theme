@@ -5,7 +5,7 @@ namespace StarterTheme;
 defined( 'ABSPATH' ) || exit;
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	<h1><?php echo esc_html( Singular::get_title() ); ?></h1>
+	<h1><?php echo esc_html( app()->singular()->get_title() ); ?></h1>
 	<?php
 	the_content();
 

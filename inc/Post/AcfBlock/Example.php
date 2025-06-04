@@ -1,10 +1,9 @@
 <?php
-namespace StarterTheme;
+namespace StarterTheme\Post\AcfBlock;
 
 defined( 'ABSPATH' ) || exit;
 
-class Admin {
+class Example {
 	public function __construct() {
-		new Admin\Notice();
 	}
 }

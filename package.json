@@ -43,8 +43,8 @@
       "asset",
       "inc",
       "lang",
+      "lib",
       "templates",
-      "vendor",
       "view"
     ],
     "files": [

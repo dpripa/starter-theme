@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$page_title = Singular::get_title();
+$page_title = app()->singular()->get_title();
 ?>
 <main class="mnt-layout" role="main" itemscope itemprop="mainContentOfPage">
 	<div class="container">
@@ -19,13 +19,13 @@ $page_title = Singular::get_title();
 
 			while ( have_posts() ) {
 				the_post();
-				View::render( 'card-' . get_post_type() );
+				app()->view()->render( 'card-' . get_post_type() );
 			}
 
-			View::render( 'pagination' );
+			app()->view()->render( 'pagination' );
 
 		} else {
-			View::render( 'content-none' );
+			app()->view()->render( 'content-none' );
 		}
 		?>
 	</div>

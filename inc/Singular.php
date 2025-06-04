@@ -1,31 +1,34 @@
 <?php
 namespace StarterTheme;
 
-use Exception;
+use StarterTheme\OmgCore\Asset;
 
 defined( 'ABSPATH' ) || exit;
 
 class Singular {
-	public function __construct() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+	protected Asset $asset;
+
+	public function __construct( Asset $asset ) {
+		$this->asset = $asset;
+
+		add_action( 'wp_enqueue_scripts', $this->enqueue_assets() );
 	}
 
-	/**
-	 * @throws Exception
-	 */
-	public function enqueue_assets(): void {
-		Asset::enqueue_style( 'singular' );
+	protected function enqueue_assets(): callable {
+		return function (): void {
+			$this->asset->enqueue_style( 'singular' );
 
-		if ( self::is_template( 'template-example' ) ) {
-			Asset::enqueue_style( 'template-example' );
-		}
+			if ( $this->is_template( 'template-example' ) ) {
+				$this->asset->enqueue_style( 'template-example' );
+			}
+		};
 	}
 
-	public static function is_template( string $slug ): bool {
+	public function is_template( string $slug ): bool {
 		return is_page_template( 'templates/' . $slug . '.php' );
 	}
 
-	public static function get_title(): string {
+	public function get_title(): string {
 		if ( is_home() ) {
 			$home = get_option( 'page_for_posts', true );
 
