@@ -5,6 +5,7 @@ use Exception;
 
 defined( 'ABSPATH' ) || exit;
 
+const KEY       = 'starter_theme';
 const ROOT_FILE = __FILE__;
 
 $autoload = __DIR__ . '/lib/vendor/scoper-autoload.php';

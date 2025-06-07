@@ -12,9 +12,9 @@ class App extends AbstractApp {
 	protected Singular $singular;
 
 	protected function __construct() {
-		parent::__construct( ROOT_FILE, 'starter_theme' );
+		parent::__construct( ROOT_FILE, KEY );
 
-		$this->acf_block_autoloader = new AcfBlockAutoloader( $this->key, $this->fs );
+		$this->acf_block_autoloader = new AcfBlockAutoloader( KEY, $this->fs );
 
 		add_action( 'after_setup_theme', $this->init() );
 		add_action( 'after_switch_theme', $this->activate() );
@@ -28,6 +28,12 @@ class App extends AbstractApp {
 	protected function init(): callable {
 		return function (): void {
 			load_theme_textdomain( 'starter-theme', $this->fs->get_path( 'lang' ) );
+			add_theme_support( 'title-tag' );
+			add_theme_support( 'post-thumbnails' );
+			add_theme_support(
+				'html5',
+				array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' )
+			);
 
 			if ( $this->requirement->validate() ) {
 				return;
