@@ -1,12 +1,12 @@
 <?php
 namespace StarterTheme;
 
+use StarterTheme\OmgCore\OmgApp;
 use StarterTheme\OmgAcfBlockAutoloader\AcfBlockAutoloader;
-use StarterTheme\OmgCore\App as AbstractApp;
 
 defined( 'ABSPATH' ) || exit;
 
-class App extends AbstractApp {
+class App extends OmgApp {
 	protected AcfBlockAutoloader $acf_block_autoloader;
 	protected Post $post;
 	protected Singular $singular;
@@ -14,9 +14,9 @@ class App extends AbstractApp {
 	protected function __construct() {
 		parent::__construct( ROOT_FILE, KEY );
 
-		$this->acf_block_autoloader = new AcfBlockAutoloader( KEY, $this->fs );
-
-		add_action( 'after_setup_theme', $this->init() );
+		add_action( 'init', $this->load_textdomain() );
+		add_action( 'after_setup_theme', $this->add_theme_support() );
+		add_action( 'wp_enqueue_scripts', $this->enqueue_assets() );
 		add_action( 'after_switch_theme', $this->activate() );
 		add_action( 'switch_theme', $this->deactivate() );
 	}
@@ -25,33 +25,25 @@ class App extends AbstractApp {
 		return $this->singular;
 	}
 
-	protected function init(): callable {
+	protected function init(): void {
+		$this->acf_block_autoloader = new AcfBlockAutoloader( KEY, $this->fs );
+		$this->post                 = new Post( $this->acf_block_autoloader );
+		$this->singular             = new Singular( $this->asset );
+	}
+
+	protected function load_textdomain(): callable {
 		return function (): void {
 			load_theme_textdomain( 'starter-theme', $this->fs->get_path( 'lang' ) );
+		};
+	}
+
+	protected function add_theme_support(): callable {
+		return function (): void {
 			add_theme_support( 'title-tag' );
 			add_theme_support( 'post-thumbnails' );
 			add_theme_support(
 				'html5',
 				array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' )
-			);
-
-			if ( $this->requirement->validate() ) {
-				return;
-			}
-
-			$this->post     = new Post( $this->acf_block_autoloader );
-			$this->singular = new Singular( $this->asset );
-
-			add_action( 'wp_enqueue_scripts', $this->enqueue_assets() );
-		};
-	}
-
-	protected function load_textdomain(): callable {
-		return function (): void {
-			load_plugin_textdomain(
-				'starter-plugin',
-				false,
-				$this->fs->get_path( 'lang' )
 			);
 		};
 	}
