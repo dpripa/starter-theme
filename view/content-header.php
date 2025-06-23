@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => app()->get_key( 'main' ),
+					'theme_location' => KEY . '_main',
 					'menu_class'     => 'ul-clean ul-inline-block',
 					'container'      => 'ul',
 				)

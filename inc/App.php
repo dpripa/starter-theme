@@ -1,6 +1,7 @@
 <?php
 namespace StarterTheme;
 
+use StarterTheme\OmgCore\Dependency;
 use StarterTheme\OmgCore\OmgApp;
 use StarterTheme\OmgAcfBlockAutoloader\AcfBlockAutoloader;
 
@@ -13,29 +14,40 @@ class App extends OmgApp {
 
 	protected function __construct() {
 		parent::__construct( ROOT_FILE, KEY );
+	}
 
-		$this->acf_block_autoloader = new AcfBlockAutoloader( KEY, $this->fs );
-		$this->post                 = new Post( $this->acf_block_autoloader );
-		$this->singular             = new Singular( $this->asset );
-
-		add_action( 'init', $this->load_textdomain() );
-		add_action( 'after_setup_theme', $this->init() );
-		add_action( 'after_switch_theme', $this->activate() );
-		add_action( 'switch_theme', $this->deactivate() );
+	protected function get_config(): array {
+		return array(
+			Dependency::class => array(
+				'notice_title_required_singular'         => __( 'The <b>%1$s</b> plugin%2$s is <b>required</b> for the <b>%3$s</b> features to function.', 'starter-theme' ),
+				'notice_title_optional_singular'         => __( 'The <b>%1$s</b> plugin%2$s is <b>recommended</b> for the all <b>%3$s</b> features to function.', 'starter-theme' ),
+				'notice_title_required_plural'           => __( 'The following plugins are <b>required</b> for the <b>%s"/b> features to function:', 'starter-theme' ),
+				'notice_title_optional_plural'           => __( 'The following plugins are <b>recommended</b> for the all <b>%s</b> features to function:', 'starter-theme' ),
+				'notice_item_not_installed'              => __( 'not installed', 'starter-theme' ),
+				'notice_item_undefiled_installation_url' => __( 'not installed, can\'t be installed automatically', 'starter-theme' ),
+				'notice_btn_activate'                    => __( 'Activate', 'starter-theme' ),
+				'notice_btn_install_and_activate'        => __( 'Install and activate', 'starter-theme' ),
+				'notice_btn_activate_only_required'      => __( 'Activate only required', 'starter-theme' ),
+				'notice_btn_install_and_activate_only_required' => __( 'Install and activate only required', 'starter-theme' ),
+				'notice_success_activate'                => __( 'Required plugin(s) activated.', 'starter-theme' ),
+				'notice_success_install_and_activate'    => __( 'Required plugin(s) installed and activated.', 'starter-theme' ),
+				'notice_error_install'                   => __( 'The "%1$s" plugin can\'t be installed automatically. Please install it manually.', 'starter-theme' ),
+			),
+		);
 	}
 
 	public function singular(): Singular {
 		return $this->singular;
 	}
 
-	protected function load_textdomain(): callable {
-		return function (): void {
-			load_theme_textdomain( 'starter-theme', $this->fs->get_path( 'lang' ) );
-		};
-	}
-
 	protected function init(): callable {
 		return function (): void {
+			parent::init()();
+
+			$this->acf_block_autoloader = new AcfBlockAutoloader( KEY, $this->fs );
+			$this->post                 = new Post( $this->acf_block_autoloader );
+			$this->singular             = new Singular( $this->asset );
+
 			add_theme_support( 'title-tag' );
 			add_theme_support( 'post-thumbnails' );
 			add_theme_support(
