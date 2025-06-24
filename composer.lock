@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd686604ecd0a5b38bfa6cdc037500b6",
+    "content-hash": "c48b4647c53278d41ae94b5e1f7e2aa9",
     "packages": [
         {
             "name": "omgpress/acf-block-autoloader",
-            "version": "1.0.0",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/omgpress/acf-block-autoloader.git",
-                "reference": "cabd4a653d89ae8cbdef5691c1d45173e88ab032"
+                "reference": "3588e394c0eb5dc3553c1d0fd8545f9dfc85514f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omgpress/acf-block-autoloader/zipball/cabd4a653d89ae8cbdef5691c1d45173e88ab032",
-                "reference": "cabd4a653d89ae8cbdef5691c1d45173e88ab032",
+                "url": "https://api.github.com/repos/omgpress/acf-block-autoloader/zipball/3588e394c0eb5dc3553c1d0fd8545f9dfc85514f",
+                "reference": "3588e394c0eb5dc3553c1d0fd8545f9dfc85514f",
                 "shasum": ""
             },
             "require": {
@@ -50,22 +50,22 @@
             ],
             "support": {
                 "issues": "https://github.com/omgpress/acf-block-autoloader/issues",
-                "source": "https://github.com/omgpress/acf-block-autoloader/tree/1.0.0"
+                "source": "https://github.com/omgpress/acf-block-autoloader/tree/0.1.0"
             },
-            "time": "2025-06-07T18:46:03+00:00"
+            "time": "2025-06-24T17:18:31+00:00"
         },
         {
             "name": "omgpress/omgcore",
-            "version": "1.0.3",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/omgpress/omgcore.git",
-                "reference": "c665acc2af09a72d9589c402900698bc4ad72e98"
+                "reference": "0cf0904531526dfa0a777481f50e8dedce9f90c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omgpress/omgcore/zipball/c665acc2af09a72d9589c402900698bc4ad72e98",
-                "reference": "c665acc2af09a72d9589c402900698bc4ad72e98",
+                "url": "https://api.github.com/repos/omgpress/omgcore/zipball/0cf0904531526dfa0a777481f50e8dedce9f90c2",
+                "reference": "0cf0904531526dfa0a777481f50e8dedce9f90c2",
                 "shasum": ""
             },
             "require": {
@@ -98,9 +98,9 @@
             ],
             "support": {
                 "issues": "https://github.com/omgpress/omgcore/issues",
-                "source": "https://github.com/omgpress/omgcore/tree/1.0.3"
+                "source": "https://github.com/omgpress/omgcore/tree/0.1.0"
             },
-            "time": "2025-06-22T23:41:11+00:00"
+            "time": "2025-06-24T17:17:01+00:00"
         }
     ],
     "packages-dev": [

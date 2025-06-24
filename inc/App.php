@@ -16,26 +16,6 @@ class App extends OmgApp {
 		parent::__construct( ROOT_FILE, KEY );
 	}
 
-	protected function get_config(): array {
-		return array(
-			Dependency::class => array(
-				'notice_title_required_singular'         => __( 'The <b>%1$s</b> plugin%2$s is <b>required</b> for the <b>%3$s</b> features to function.', 'starter-theme' ),
-				'notice_title_optional_singular'         => __( 'The <b>%1$s</b> plugin%2$s is <b>recommended</b> for the all <b>%3$s</b> features to function.', 'starter-theme' ),
-				'notice_title_required_plural'           => __( 'The following plugins are <b>required</b> for the <b>%s"/b> features to function:', 'starter-theme' ),
-				'notice_title_optional_plural'           => __( 'The following plugins are <b>recommended</b> for the all <b>%s</b> features to function:', 'starter-theme' ),
-				'notice_item_not_installed'              => __( 'not installed', 'starter-theme' ),
-				'notice_item_undefiled_installation_url' => __( 'not installed, can\'t be installed automatically', 'starter-theme' ),
-				'notice_btn_activate'                    => __( 'Activate', 'starter-theme' ),
-				'notice_btn_install_and_activate'        => __( 'Install and activate', 'starter-theme' ),
-				'notice_btn_activate_only_required'      => __( 'Activate only required', 'starter-theme' ),
-				'notice_btn_install_and_activate_only_required' => __( 'Install and activate only required', 'starter-theme' ),
-				'notice_success_activate'                => __( 'Required plugin(s) activated.', 'starter-theme' ),
-				'notice_success_install_and_activate'    => __( 'Required plugin(s) installed and activated.', 'starter-theme' ),
-				'notice_error_install'                   => __( 'The "%1$s" plugin can\'t be installed automatically. Please install it manually.', 'starter-theme' ),
-			),
-		);
-	}
-
 	public function singular(): Singular {
 		return $this->singular;
 	}
@@ -74,5 +54,25 @@ class App extends OmgApp {
 		return function (): void {
 			$this->admin_notice->reset();
 		};
+	}
+
+	protected function get_config(): array {
+		return array(
+			Dependency::class => array(
+				'notice_title_required_singular'         => __( 'The <b>%1$s</b> plugin%2$s is <b>required</b> for the <b>%3$s</b> features to function.', 'starter-theme' ),
+				'notice_title_optional_singular'         => __( 'The <b>%1$s</b> plugin%2$s is <b>recommended</b> for the all <b>%3$s</b> features to function.', 'starter-theme' ),
+				'notice_title_required_plural'           => __( 'The following plugins are <b>required</b> for the <b>%s"/b> features to function:', 'starter-theme' ),
+				'notice_title_optional_plural'           => __( 'The following plugins are <b>recommended</b> for the all <b>%s</b> features to function:', 'starter-theme' ),
+				'notice_item_not_installed'              => __( 'not installed', 'starter-theme' ),
+				'notice_item_undefiled_installation_url' => __( 'not installed, can\'t be installed automatically', 'starter-theme' ),
+				'notice_btn_activate'                    => __( 'Activate', 'starter-theme' ),
+				'notice_btn_install_and_activate'        => __( 'Install and activate', 'starter-theme' ),
+				'notice_btn_activate_only_required'      => __( 'Activate only required', 'starter-theme' ),
+				'notice_btn_install_and_activate_only_required' => __( 'Install and activate only required', 'starter-theme' ),
+				'notice_success_activate'                => __( 'Required plugin(s) activated.', 'starter-theme' ),
+				'notice_success_install_and_activate'    => __( 'Required plugin(s) installed and activated.', 'starter-theme' ),
+				'notice_error_install'                   => __( 'The "%1$s" plugin can\'t be installed automatically. Please install it manually.', 'starter-theme' ),
+			),
+		);
 	}
 }
