@@ -2,13 +2,16 @@
 namespace StarterTheme;
 
 use StarterTheme\OmgCore\Asset;
+use StarterTheme\OmgCore\Feature;
 
 defined( 'ABSPATH' ) || exit;
 
-class Singular {
+class Singular extends Feature {
 	protected Asset $asset;
 
 	public function __construct( Asset $asset ) {
+		parent::__construct();
+
 		$this->asset = $asset;
 
 		add_action( 'wp_enqueue_scripts', $this->enqueue_assets() );
