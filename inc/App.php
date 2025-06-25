@@ -24,6 +24,18 @@ class App extends OmgApp {
 		return function (): void {
 			parent::init()();
 
+			$this->dependency
+				->require_plugin(
+					'acf_pro',
+					__( 'Advanced Custom Fields Pro', 'starter-theme' ),
+					'advanced-custom-fields-pro/acf.php',
+				)
+				->maybe_render_notice();
+
+			if ( ! $this->dependency->is_active_all_plugins() ) {
+				return;
+			}
+
 			$this->acf_block_autoloader = new AcfBlockAutoloader( KEY, $this->fs );
 			$this->post                 = new Post( $this->acf_block_autoloader );
 			$this->singular             = new Singular( $this->asset );
