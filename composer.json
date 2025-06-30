@@ -24,8 +24,8 @@
   },
   "require": {
     "php": ">=7.4.0",
-    "omgpress/omgcore": "^0.1.0",
-    "omgpress/acf-block-autoloader": "^0.1.0"
+    "omgpress/omgcore": "^0.1.1",
+    "omgpress/acf-block-autoloader": "^0.1.2"
   },
   "require-dev": {
     "humbug/php-scoper": "^0.18.17",

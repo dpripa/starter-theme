@@ -22,6 +22,8 @@ class App extends OmgApp {
 
 	protected function init(): callable {
 		return function (): void {
+			global $pagenow;
+
 			parent::init()();
 
 			$this->dependency
@@ -33,6 +35,13 @@ class App extends OmgApp {
 				->maybe_render_notice();
 
 			if ( ! $this->dependency->is_active_all_plugins() ) {
+				if ( ! is_admin() && 'wp-login.php' !== $pagenow ) {
+					wp_die(
+						esc_html__( 'Here is the critical error. Please, check the details in the admin panel.', 'kyhnia' ),
+						esc_html__( 'Error', 'kyhnia' )
+					);
+				}
+
 				return;
 			}
 

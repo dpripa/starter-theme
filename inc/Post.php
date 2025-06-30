@@ -3,11 +3,11 @@ namespace StarterTheme;
 
 use Exception;
 use StarterTheme\OmgAcfBlockAutoloader\AcfBlockAutoloader;
-use StarterTheme\OmgCore\Feature;
+use StarterTheme\OmgCore\OmgFeature;
 
 defined( 'ABSPATH' ) || exit;
 
-class Post extends Feature {
+class Post extends OmgFeature {
 	protected App $app;
 	protected string $key = 'post';
 
