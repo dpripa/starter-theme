@@ -20,7 +20,7 @@ class Post extends OmgFeature {
 		$acf_block_autoloader->register_block_type(
 			$this->key,
 			__( 'Starter Theme Blocks', 'starter-theme' ),
-			static::class . '\AcfBlock'
+			static::class
 		);
 	}
 }
