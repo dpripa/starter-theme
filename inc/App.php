@@ -13,7 +13,7 @@ class App extends OmgApp {
 	protected Singular $singular;
 
 	protected function __construct() {
-		parent::__construct( ROOT_FILE, KEY );
+		parent::__construct( ROOT_FILE, KEY, false );
 	}
 
 	public function singular(): Singular {
