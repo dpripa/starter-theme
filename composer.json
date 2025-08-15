@@ -25,7 +25,8 @@
   "require": {
     "php": ">=7.4.0",
     "omgpress/omgcore": "0.1.9",
-    "omgpress/acf-block-autoloader": "^0.1.2"
+    "omgpress/acf-block-autoloader": "^0.1.2",
+    "stoutlogic/acf-builder": "^v1.12.0"
   },
   "require-dev": {
     "humbug/php-scoper": "^0.18.17",
