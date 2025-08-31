@@ -2,7 +2,7 @@
 namespace StarterTheme;
 
 use Exception;
-use StarterTheme\OmgAcfBlockAutoloader\AcfBlockAutoloader;
+use StarterTheme\OmgAcfHelper\AcfBlockAutoloader;
 use StarterTheme\OmgCore\OmgFeature;
 
 defined( 'ABSPATH' ) || exit;

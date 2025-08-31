@@ -3,11 +3,13 @@ namespace StarterTheme;
 
 use StarterTheme\OmgCore\Dependency;
 use StarterTheme\OmgCore\OmgApp;
-use StarterTheme\OmgAcfBlockAutoloader\AcfBlockAutoloader;
+use StarterTheme\OmgAcfHelper\AcfHelper;
+use StarterTheme\OmgAcfHelper\AcfBlockAutoloader;
 
 defined( 'ABSPATH' ) || exit;
 
 class App extends OmgApp {
+	protected AcfHelper $acf_helper;
 	protected AcfBlockAutoloader $acf_block_autoloader;
 	protected Post $post;
 	protected Singular $singular;
@@ -26,13 +28,9 @@ class App extends OmgApp {
 
 			parent::init()();
 
-			$this->dependency
-				->require_plugin(
-					'acf_pro',
-					__( 'Advanced Custom Fields Pro', 'starter-theme' ),
-					'advanced-custom-fields-pro/acf.php',
-				)
-				->maybe_render_notice();
+			$this->acf_helper = new AcfHelper( $this->dependency );
+
+			$this->dependency->maybe_render_notice();
 
 			if ( ! $this->dependency->is_active_all_plugins() ) {
 				if ( ! is_admin() && 'wp-login.php' !== $pagenow ) {
@@ -45,7 +43,7 @@ class App extends OmgApp {
 				return;
 			}
 
-			$this->acf_block_autoloader = new AcfBlockAutoloader( KEY, $this->fs );
+			$this->acf_block_autoloader = new AcfBlockAutoloader( ROOT_FILE, $this->fs );
 			$this->post                 = new Post( $this->acf_block_autoloader );
 			$this->singular             = new Singular( $this->asset );
 

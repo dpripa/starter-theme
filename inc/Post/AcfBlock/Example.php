@@ -1,7 +1,7 @@
 <?php
 namespace StarterTheme\Post\AcfBlock;
 
-use StarterTheme\OmgAcfBlockAutoloader\AcfBlockField;
+use StarterTheme\OmgAcfHelper\AcfBlockField;
 
 defined( 'ABSPATH' ) || exit;
 
