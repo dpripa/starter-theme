@@ -16,6 +16,11 @@ class App extends OmgApp {
 
 	protected function __construct() {
 		parent::__construct( ROOT_FILE, KEY, false );
+
+		$this->acf_helper           = new AcfHelper( $this->dependency );
+		$this->acf_block_autoloader = new AcfBlockAutoloader( ROOT_FILE, $this->fs );
+		$this->post                 = new Post( $this->acf_block_autoloader );
+		$this->singular             = new Singular( $this->asset );
 	}
 
 	public function singular(): Singular {
@@ -24,29 +29,8 @@ class App extends OmgApp {
 
 	protected function init(): callable {
 		return function (): void {
-			global $pagenow;
-
 			parent::init()();
-
-			$this->acf_helper = new AcfHelper( $this->dependency );
-
 			$this->dependency->maybe_render_notice();
-
-			if ( ! $this->dependency->is_active_all_plugins() ) {
-				if ( ! is_admin() && 'wp-login.php' !== $pagenow ) {
-					wp_die(
-						esc_html__( 'Here is the critical error. Please, check the details in the admin panel.', 'starter-theme' ),
-						esc_html__( 'Error', 'starter-theme' )
-					);
-				}
-
-				return;
-			}
-
-			$this->acf_block_autoloader = new AcfBlockAutoloader( ROOT_FILE, $this->fs );
-			$this->post                 = new Post( $this->acf_block_autoloader );
-			$this->singular             = new Singular( $this->asset );
-
 			add_theme_support( 'title-tag' );
 			add_theme_support( 'post-thumbnails' );
 			add_theme_support(
