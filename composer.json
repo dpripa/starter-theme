@@ -2,12 +2,12 @@
   "name": "omgpress/starter-theme",
   "version": "1.0.0",
   "type": "wordpress-theme",
-  "description": "The WordPress Theme",
+  "description": "The WordPress theme",
   "homepage": "https://omgpress.com/starter?type=theme",
   "license": "GPL-2.0-or-later",
   "authors": [
     {
-      "name": "OmgPress",
+      "name": "OMG!PRESS",
       "email": "hello@omgpress.com",
       "homepage": "https://omgpress.com"
     }

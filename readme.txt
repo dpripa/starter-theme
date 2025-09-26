@@ -1,7 +1,7 @@
 === Starter Theme ===
 
 Stable tag: 1.0.0
-Contributors: OmgPress
+Contributors: OMG!PRESS
 Requires PHP: 7.4.0
 Requires at least: 5.0.0
 Tested up to: 5.0.0
@@ -11,7 +11,7 @@ Tags:
 
 == Description ==
 
-The WordPress Theme
+The WordPress theme
 
 == Changelog ==
 
