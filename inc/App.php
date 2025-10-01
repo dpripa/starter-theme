@@ -17,8 +17,8 @@ class App extends OmgApp {
 	protected function __construct() {
 		parent::__construct( ROOT_FILE, KEY, false );
 
-		$this->acf_helper           = new AcfHelper( $this->dependency );
-		$this->acf_block_autoloader = new AcfBlockAutoloader( ROOT_FILE, $this->fs );
+		$this->acf_helper           = new AcfHelper( $this );
+		$this->acf_block_autoloader = new AcfBlockAutoloader( $this );
 		$this->post                 = new Post( $this->acf_block_autoloader );
 		$this->singular             = new Singular( $this->asset );
 	}
