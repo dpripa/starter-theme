@@ -3,12 +3,12 @@ namespace StarterTheme;
 
 use Exception;
 use StarterTheme\OmgAcfHelper\AcfBlockAutoloader;
-use StarterTheme\OmgCore\OmgFeature;
+use StarterTheme\OmgCore\Feature;
 
 defined( 'ABSPATH' ) || exit;
 
-class Post extends OmgFeature {
-	protected string $key = 'post';
+class Post extends Feature {
+	protected string $post_type = 'post';
 	protected AcfBlockAutoloader $acf_block_autoloader;
 
 	/**
@@ -25,7 +25,7 @@ class Post extends OmgFeature {
 	protected function register_blocks(): callable {
 		return function (): void {
 			$this->acf_block_autoloader->register_block_type(
-				$this->key,
+				$this->post_type,
 				__( 'Starter Theme Blocks', 'starter-theme' ),
 				static::class
 			);

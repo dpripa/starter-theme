@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c60db7bf109c4a986da578c380f71f60",
+    "content-hash": "fad960c82a16eb88d53253e85f58ddef",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -98,16 +98,16 @@
         },
         {
             "name": "omgpress/acf-helper",
-            "version": "0.1.6",
+            "version": "0.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/omgpress/acf-helper.git",
-                "reference": "17e11e3b66eacf5ee20809a3866c9b0470cda699"
+                "reference": "90c010ce1cef8d621b7612735d156755f96503ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omgpress/acf-helper/zipball/17e11e3b66eacf5ee20809a3866c9b0470cda699",
-                "reference": "17e11e3b66eacf5ee20809a3866c9b0470cda699",
+                "url": "https://api.github.com/repos/omgpress/acf-helper/zipball/90c010ce1cef8d621b7612735d156755f96503ab",
+                "reference": "90c010ce1cef8d621b7612735d156755f96503ab",
                 "shasum": ""
             },
             "require": {
@@ -140,22 +140,22 @@
             ],
             "support": {
                 "issues": "https://github.com/omgpress/acf-helper/issues",
-                "source": "https://github.com/omgpress/acf-helper/tree/0.1.6"
+                "source": "https://github.com/omgpress/acf-helper/tree/0.1.8"
             },
-            "time": "2025-09-30T02:00:28+00:00"
+            "time": "2025-10-06T01:20:35+00:00"
         },
         {
             "name": "omgpress/omgcore",
-            "version": "0.1.14",
+            "version": "0.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/omgpress/omgcore.git",
-                "reference": "8a618b166f43ba529df8d237cfeeddfa691234e3"
+                "reference": "0a7d2c9c53fc2b90a7231fc11eaa39bb1c30806f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omgpress/omgcore/zipball/8a618b166f43ba529df8d237cfeeddfa691234e3",
-                "reference": "8a618b166f43ba529df8d237cfeeddfa691234e3",
+                "url": "https://api.github.com/repos/omgpress/omgcore/zipball/0a7d2c9c53fc2b90a7231fc11eaa39bb1c30806f",
+                "reference": "0a7d2c9c53fc2b90a7231fc11eaa39bb1c30806f",
                 "shasum": ""
             },
             "require": {
@@ -192,9 +192,9 @@
             ],
             "support": {
                 "issues": "https://github.com/omgpress/omgcore/issues",
-                "source": "https://github.com/omgpress/omgcore/tree/0.1.14"
+                "source": "https://github.com/omgpress/omgcore/tree/0.1.15"
             },
-            "time": "2025-09-30T02:00:18+00:00"
+            "time": "2025-10-04T21:46:38+00:00"
         },
         {
             "name": "stoutlogic/acf-builder",

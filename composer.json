@@ -24,8 +24,8 @@
   },
   "require": {
     "php": ">=7.4.0",
-    "omgpress/omgcore": "0.1.14",
-    "omgpress/acf-helper": "0.1.6",
+    "omgpress/omgcore": "0.1.15",
+    "omgpress/acf-helper": "0.1.8",
     "stoutlogic/acf-builder": "^v1.12.0"
   },
   "require-dev": {

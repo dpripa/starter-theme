@@ -2,13 +2,13 @@
 namespace StarterTheme;
 
 use StarterTheme\OmgCore\Dependency;
-use StarterTheme\OmgCore\OmgApp;
+use StarterTheme\OmgCore\Core;
 use StarterTheme\OmgAcfHelper\AcfHelper;
 use StarterTheme\OmgAcfHelper\AcfBlockAutoloader;
 
 defined( 'ABSPATH' ) || exit;
 
-class App extends OmgApp {
+class App extends Core {
 	protected AcfHelper $acf_helper;
 	protected AcfBlockAutoloader $acf_block_autoloader;
 	protected Post $post;
@@ -17,8 +17,8 @@ class App extends OmgApp {
 	protected function __construct() {
 		parent::__construct( ROOT_FILE, KEY, false );
 
-		$this->acf_helper           = new AcfHelper( $this );
-		$this->acf_block_autoloader = new AcfBlockAutoloader( $this );
+		$this->acf_helper           = new AcfHelper( $this->dependency );
+		$this->acf_block_autoloader = new AcfBlockAutoloader( $this->key, $this->fs );
 		$this->post                 = new Post( $this->acf_block_autoloader );
 		$this->singular             = new Singular( $this->asset );
 	}

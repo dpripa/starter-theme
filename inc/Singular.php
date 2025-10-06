@@ -2,11 +2,11 @@
 namespace StarterTheme;
 
 use StarterTheme\OmgCore\Asset;
-use StarterTheme\OmgCore\OmgFeature;
+use StarterTheme\OmgCore\Feature;
 
 defined( 'ABSPATH' ) || exit;
 
-class Singular extends OmgFeature {
+class Singular extends Feature {
 	protected Asset $asset;
 
 	public function __construct( Asset $asset ) {
