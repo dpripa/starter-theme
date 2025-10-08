@@ -1,6 +1,7 @@
 <?php
-
 namespace StarterTheme;
+
+defined( 'ABSPATH' ) || exit;
 
 global $wp_query;
 
