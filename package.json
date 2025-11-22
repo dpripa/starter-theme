@@ -39,7 +39,6 @@
   "release": {
     "directories": [
       "acf-block",
-      "acf-json",
       "asset",
       "inc",
       "lang",
